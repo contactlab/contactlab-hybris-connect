@@ -1,0 +1,314 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic);
+
+#Profile-Newsletter .checkbox-list{
+  margin: 5px 0px;
+  display: block;
+}
+
+#Profile-Newsletter label{
+  display: inline-block;
+  margin-left: 6px;
+}
+
+input[disabled]:checked{
+  outline:1px solid #8e8f8f;
+}
+
+#Profile-Newsletter input[type=submit] {
+    background: none repeat scroll 0 0 #f8f8f8;
+    border: 2px solid #c7c7c7;
+    color: #777;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-family: Arial,Verdana,sans-serif;
+    font-size: 100%;
+    font-weight: bold;
+    line-height: 130%;
+    margin: 0.7em 0.5em 0.7em 0;
+    padding: 0 10px;
+    text-align: center;
+    text-decoration: none;
+    height: 32px;
+    line-height: 28px;
+}
+
+/*Eliminates padding, centers the thumbnail */
+
+body, html {
+padding: 0;
+margin: 0;
+text-align: center;
+}
+
+/* Styles the thumbnail */
+
+a.lightbox img {
+height: 62px;
+width:950px;
+border: none;
+}
+
+/* Styles the lightbox, removes it from sight and adds the fade-in transition */
+
+.lightbox-target {
+background: rgba(0,0,0,.7);
+width: 100%;
+opacity: 0;
+-webkit-transition: opacity .5s ease-in-out;
+-moz-transition: opacity .5s ease-in-out;
+-o-transition: opacity .5s ease-in-out;
+transition: opacity .5s ease-in-out;
+overflow: hidden;
+}
+
+/* Styles the lightbox image, centers it vertically and horizontally, adds the zoom-in transition and makes it responsive using a combination of margin and absolute positioning */
+
+.lightbox-target img {
+margin: auto;
+position: absolute;
+top: 0;
+left:0;
+right:0;
+bottom: 0;
+max-height: 0%;
+max-width: 0%;
+border: 3px solid white;
+box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+box-sizing: border-box;
+-webkit-transition: .5s ease-in-out;
+-moz-transition: .5s ease-in-out;
+-o-transition: .5s ease-in-out;
+transition: .5s ease-in-out;
+}
+
+/* Styles the close link, adds the slide down transition */
+
+a.lightbox-close {
+display: block;
+width:50px;
+height:50px;
+box-sizing: border-box;
+background: white;
+color: black;
+text-decoration: none;
+position: absolute;
+top: -80px;
+right: 0;
+-webkit-transition: .5s ease-in-out;
+-moz-transition: .5s ease-in-out;
+-o-transition: .5s ease-in-out;
+transition: .5s ease-in-out;
+}
+
+/* Provides part of the "X" to eliminate an image from the close link */
+
+a.lightbox-close:before {
+content: "";
+display: block;
+height: 30px;
+width: 1px;
+background: black;
+position: absolute;
+left: 26px;
+top:10px;
+-webkit-transform:rotate(45deg);
+-moz-transform:rotate(45deg);
+-o-transform:rotate(45deg);
+transform:rotate(45deg);
+}
+
+/* Provides part of the "X" to eliminate an image from the close link */
+
+a.lightbox-close:after {
+content: "";
+display: block;
+height: 30px;
+width: 1px;
+background: black;
+position: absolute;
+left: 26px;
+top:10px;
+-webkit-transform:rotate(-45deg);
+-moz-transform:rotate(-45deg);
+-o-transform:rotate(-45deg);
+transform:rotate(-45deg);
+}
+
+/* Uses the :target pseudo-class to perform the animations upon clicking the .lightbox-target anchor */
+
+.lightbox-target {
+opacity: 1;
+top: 0;
+bottom: 0;
+overflow:hidden;
+background-color:#ffffff;
+}
+
+.lightbox-target img {
+max-height: 100%;
+max-width: 100%;
+}
+
+.lightbox-target a.lightbox-close {
+	position:fixed;
+top: 0px;
+}
+
+#colorbox{
+	position:fixed;
+	top:100px !important;
+  border: 5px solid #000000;
+	}
+#colorbox #cboxClose{
+	display:none !important;
+	}
+	
+#colorbox #cboxLoadedContent{
+	overflow:hidden !important;
+}
+.lightbox-target#subscriptionsDiv {
+	left:0px;
+	padding-top:0px;
+}
+
+div#form_subscriptions{
+  background: #ffffff;
+  vertical-align: middle;
+}
+
+form#subscriptions{
+  width: 330px;
+  height: 340px;
+  padding:20px 20px 20px 10px;
+  margin: 0 auto;
+}
+
+#subscriptions h1{
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  margin:0;
+  padding: 0 0 0 10px;
+}
+
+#subscriptions hr{
+  margin:15px 0px;
+  background-color: #000000;
+  border: 0px;
+  height: 1px;
+}
+
+#subscriptions input[type="text"] {
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  font-size: 14px;
+  line-height: 18px;
+  color: #a3a3a3;
+  width: 270px;
+  height: 28px;
+  float: left;
+  text-align: left;
+  margin: 5px 0 0 10px;
+  padding: 0 0 0 10px;
+}
+
+#subscriptions p{
+   padding: 15px 0 5px 10px;
+   margin: 0;
+   display: block;
+   clear: both;
+}
+
+.error_nl{
+   width:17px;
+   height: 17px;
+   background: url(../images/error.gif) no-repeat bottom center;
+   float: right;
+   display: inline-block;
+   vertical-align: middle;
+}
+
+.input_txt{
+  height: 28px !important;
+}
+
+.error_nl_txt{
+  display:block;
+  font-size: 12px;
+  color: #fa0000;
+  clear: both;
+  padding-left: 10px;
+}
+
+#subscriptions .checkbox-list-nl{
+  margin: 0px 10px;
+  float:left;
+  width: 140px;
+}
+
+ #subscriptions .checkbox-list-nl-privacy{
+  margin: 15px 10px;
+  float:left;
+  width: 250px;
+}
+
+.checkbox-list-nl-privacy label {
+  font-size:11px;
+  color: #000000;
+}
+
+.checkbox-list-nl-privacy label a{
+  text-decoration: underline;
+}
+
+#subscriptions button[type=submit] {
+    background: url('../images/freccia.gif') no-repeat right #000000;
+    border: 0;
+    color: #ffffff;
+    cursor: pointer;
+    display: block;
+    font-family: Arial,Verdana,sans-serif;
+    font-weight: bold;
+    padding: 0 10px;
+    margin-left: 10px;
+    text-align: left;
+    text-decoration: none;
+    width:320px;
+    height: 32px;
+    line-height: 28px;
+    text-transform: uppercase;
+}
+
+#notify-newsletter{
+  margin-top: 20px;
+  width:910px;
+  padding: 20px;
+  background-color: #eeeeee;
+  color: #727272;
+  text-align: center;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+#notify-newsletter a{
+  color:#000000;
+  text-decoration:underline;
+}
+
+#notify-newsletter h1{
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 0 0 15px 0;
+  margin: 0;
+  font-size:32px;
+  line-height: 35px;
+  color: #000000;
+}
+
+#notify-newsletter.positive{
+  background: url(../images/mail.gif) no-repeat bottom center #eeeeee;
+    width:900px !important;
+    padding: 20px;
+    border: 5px solid black;
+    min-height: 191px;
+}

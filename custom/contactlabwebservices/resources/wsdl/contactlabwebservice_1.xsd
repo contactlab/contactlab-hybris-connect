@@ -1,0 +1,1123 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.7-b01-. -->
+<xs:schema xmlns:tns="http://ws.api.contactlab.com/" xmlns:ns1="domain.ws.api.contactlab.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.api.contactlab.com/">
+  <xs:import namespace="domain.ws.api.contactlab.com" schemaLocation="contactlabwebservice_2.xsd" />
+  <xs:element name="addAttachment" type="tns:addAttachment" />
+  <xs:element name="addAttachmentResponse" type="tns:addAttachmentResponse" />
+  <xs:element name="addCampaignNote" type="tns:addCampaignNote" />
+  <xs:element name="addCampaignNoteResponse" type="tns:addCampaignNoteResponse" />
+  <xs:element name="addSubscriber" type="tns:addSubscriber" />
+  <xs:element name="addSubscriberResponse" type="tns:addSubscriberResponse" />
+  <xs:element name="addSubscriberSource" type="tns:addSubscriberSource" />
+  <xs:element name="addSubscriberSourceFilter" type="tns:addSubscriberSourceFilter" />
+  <xs:element name="addSubscriberSourceFilterResponse" type="tns:addSubscriberSourceFilterResponse" />
+  <xs:element name="addSubscriberSourceResponse" type="tns:addSubscriberSourceResponse" />
+  <xs:element name="addSubscribers" type="tns:addSubscribers" />
+  <xs:element name="addSubscribersResponse" type="tns:addSubscribersResponse" />
+  <xs:element name="archiveSubscriberSourceFilter" type="tns:archiveSubscriberSourceFilter" />
+  <xs:element name="archiveSubscriberSourceFilterResponse" type="tns:archiveSubscriberSourceFilterResponse" />
+  <xs:element name="borrowToken" type="tns:borrowToken" />
+  <xs:element name="borrowTokenResponse" type="tns:borrowTokenResponse" />
+  <xs:element name="cancelCampaign" type="tns:cancelCampaign" />
+  <xs:element name="cancelCampaignResponse" type="tns:cancelCampaignResponse" />
+  <xs:element name="cloneAndSendCampaign" type="tns:cloneAndSendCampaign" />
+  <xs:element name="cloneAndSendCampaignResponse" type="tns:cloneAndSendCampaignResponse" />
+  <xs:element name="countSubscribers" type="tns:countSubscribers" />
+  <xs:element name="countSubscribersIncludedInFilter" type="tns:countSubscribersIncludedInFilter" />
+  <xs:element name="countSubscribersIncludedInFilterResponse" type="tns:countSubscribersIncludedInFilterResponse" />
+  <xs:element name="countSubscribersResponse" type="tns:countSubscribersResponse" />
+  <xs:element name="createCampaign" type="tns:createCampaign" />
+  <xs:element name="createCampaignResponse" type="tns:createCampaignResponse" />
+  <xs:element name="createMessageModel" type="tns:createMessageModel" />
+  <xs:element name="createMessageModelResponse" type="tns:createMessageModelResponse" />
+  <xs:element name="findArchivedFiltersBySubscriberSource" type="tns:findArchivedFiltersBySubscriberSource" />
+  <xs:element name="findArchivedFiltersBySubscriberSourceResponse" type="tns:findArchivedFiltersBySubscriberSourceResponse" />
+  <xs:element name="findCampaigns" type="tns:findCampaigns" />
+  <xs:element name="findCampaignsByModel" type="tns:findCampaignsByModel" />
+  <xs:element name="findCampaignsByModelResponse" type="tns:findCampaignsByModelResponse" />
+  <xs:element name="findCampaignsByNameOrSubject" type="tns:findCampaignsByNameOrSubject" />
+  <xs:element name="findCampaignsByNameOrSubjectResponse" type="tns:findCampaignsByNameOrSubjectResponse" />
+  <xs:element name="findCampaignsByNote" type="tns:findCampaignsByNote" />
+  <xs:element name="findCampaignsByNoteResponse" type="tns:findCampaignsByNoteResponse" />
+  <xs:element name="findCampaignsByStatus" type="tns:findCampaignsByStatus" />
+  <xs:element name="findCampaignsByStatusResponse" type="tns:findCampaignsByStatusResponse" />
+  <xs:element name="findCampaignsBySubscriberSourceFilter" type="tns:findCampaignsBySubscriberSourceFilter" />
+  <xs:element name="findCampaignsBySubscriberSourceFilterResponse" type="tns:findCampaignsBySubscriberSourceFilterResponse" />
+  <xs:element name="findCampaignsResponse" type="tns:findCampaignsResponse" />
+  <xs:element name="findCampaignsSentBetween" type="tns:findCampaignsSentBetween" />
+  <xs:element name="findCampaignsSentBetweenResponse" type="tns:findCampaignsSentBetweenResponse" />
+  <xs:element name="findFiltersBySubscriberSource" type="tns:findFiltersBySubscriberSource" />
+  <xs:element name="findFiltersBySubscriberSourceResponse" type="tns:findFiltersBySubscriberSourceResponse" />
+  <xs:element name="findMessageModels" type="tns:findMessageModels" />
+  <xs:element name="findMessageModelsBySubscriberSource" type="tns:findMessageModelsBySubscriberSource" />
+  <xs:element name="findMessageModelsBySubscriberSourceResponse" type="tns:findMessageModelsBySubscriberSourceResponse" />
+  <xs:element name="findMessageModelsResponse" type="tns:findMessageModelsResponse" />
+  <xs:element name="findNotesByCampaign" type="tns:findNotesByCampaign" />
+  <xs:element name="findNotesByCampaignResponse" type="tns:findNotesByCampaignResponse" />
+  <xs:element name="findPeriodicCampaigns" type="tns:findPeriodicCampaigns" />
+  <xs:element name="findPeriodicCampaignsResponse" type="tns:findPeriodicCampaignsResponse" />
+  <xs:element name="findSubscriberSources" type="tns:findSubscriberSources" />
+  <xs:element name="findSubscriberSourcesResponse" type="tns:findSubscriberSourcesResponse" />
+  <xs:element name="findSubscribers" type="tns:findSubscribers" />
+  <xs:element name="findSubscribersIncludedInFilter" type="tns:findSubscribersIncludedInFilter" />
+  <xs:element name="findSubscribersIncludedInFilterResponse" type="tns:findSubscribersIncludedInFilterResponse" />
+  <xs:element name="findSubscribersResponse" type="tns:findSubscribersResponse" />
+  <xs:element name="findTriggerableCampaigns" type="tns:findTriggerableCampaigns" />
+  <xs:element name="findTriggerableCampaignsResponse" type="tns:findTriggerableCampaignsResponse" />
+  <xs:element name="getArchivedSubscriberSourceFilter" type="tns:getArchivedSubscriberSourceFilter" />
+  <xs:element name="getArchivedSubscriberSourceFilterResponse" type="tns:getArchivedSubscriberSourceFilterResponse" />
+  <xs:element name="getAttachmentByCampaignId" type="tns:getAttachmentByCampaignId" />
+  <xs:element name="getAttachmentByCampaignIdResponse" type="tns:getAttachmentByCampaignIdResponse" />
+  <xs:element name="getAvailableCommunicationCategories" type="tns:getAvailableCommunicationCategories" />
+  <xs:element name="getAvailableCommunicationCategoriesResponse" type="tns:getAvailableCommunicationCategoriesResponse" />
+  <xs:element name="getCampaign" type="tns:getCampaign" />
+  <xs:element name="getCampaignDeliveryStatus" type="tns:getCampaignDeliveryStatus" />
+  <xs:element name="getCampaignDeliveryStatusResponse" type="tns:getCampaignDeliveryStatusResponse" />
+  <xs:element name="getCampaignFeedback" type="tns:getCampaignFeedback" />
+  <xs:element name="getCampaignFeedbackResponse" type="tns:getCampaignFeedbackResponse" />
+  <xs:element name="getCampaignResponse" type="tns:getCampaignResponse" />
+  <xs:element name="getCryptoKey" type="tns:getCryptoKey" />
+  <xs:element name="getCryptoKeyResponse" type="tns:getCryptoKeyResponse" />
+  <xs:element name="getMessageModelById" type="tns:getMessageModelById" />
+  <xs:element name="getMessageModelByIdResponse" type="tns:getMessageModelByIdResponse" />
+  <xs:element name="getRequestStatus" type="tns:getRequestStatus" />
+  <xs:element name="getRequestStatusResponse" type="tns:getRequestStatusResponse" />
+  <xs:element name="getSubscriber" type="tns:getSubscriber" />
+  <xs:element name="getSubscriberDataExchangeStatus" type="tns:getSubscriberDataExchangeStatus" />
+  <xs:element name="getSubscriberDataExchangeStatusResponse" type="tns:getSubscriberDataExchangeStatusResponse" />
+  <xs:element name="getSubscriberResponse" type="tns:getSubscriberResponse" />
+  <xs:element name="getSubscriberSource" type="tns:getSubscriberSource" />
+  <xs:element name="getSubscriberSourceFilter" type="tns:getSubscriberSourceFilter" />
+  <xs:element name="getSubscriberSourceFilterResponse" type="tns:getSubscriberSourceFilterResponse" />
+  <xs:element name="getSubscriberSourceResponse" type="tns:getSubscriberSourceResponse" />
+  <xs:element name="getTrackedLinks" type="tns:getTrackedLinks" />
+  <xs:element name="getTrackedLinksResponse" type="tns:getTrackedLinksResponse" />
+  <xs:element name="getXMLDeliveries" type="tns:getXMLDeliveries" />
+  <xs:element name="getXMLDeliveriesResponse" type="tns:getXMLDeliveriesResponse" />
+  <xs:element name="getXMLDeliveryTransitions" type="tns:getXMLDeliveryTransitions" />
+  <xs:element name="getXMLDeliveryTransitionsResponse" type="tns:getXMLDeliveryTransitionsResponse" />
+  <xs:element name="invalidateToken" type="tns:invalidateToken" />
+  <xs:element name="invalidateTokenResponse" type="tns:invalidateTokenResponse" />
+  <xs:element name="isSubscriberSourceLocked" type="tns:isSubscriberSourceLocked" />
+  <xs:element name="isSubscriberSourceLockedResponse" type="tns:isSubscriberSourceLockedResponse" />
+  <xs:element name="keepaliveToken" type="tns:keepaliveToken" />
+  <xs:element name="keepaliveTokenResponse" type="tns:keepaliveTokenResponse" />
+  <xs:element name="modifySubscriberSubscriptionStatus" type="tns:modifySubscriberSubscriptionStatus" />
+  <xs:element name="modifySubscriberSubscriptionStatusByMailqId" type="tns:modifySubscriberSubscriptionStatusByMailqId" />
+  <xs:element name="modifySubscriberSubscriptionStatusByMailqIdResponse" type="tns:modifySubscriberSubscriptionStatusByMailqIdResponse" />
+  <xs:element name="modifySubscriberSubscriptionStatusResponse" type="tns:modifySubscriberSubscriptionStatusResponse" />
+  <xs:element name="publishOnWeb" type="tns:publishOnWeb" />
+  <xs:element name="publishOnWebResponse" type="tns:publishOnWebResponse" />
+  <xs:element name="removeSubscriber" type="tns:removeSubscriber" />
+  <xs:element name="removeSubscriberResponse" type="tns:removeSubscriberResponse" />
+  <xs:element name="requestCampaignFeedbackReport" type="tns:requestCampaignFeedbackReport" />
+  <xs:element name="requestCampaignFeedbackReportResponse" type="tns:requestCampaignFeedbackReportResponse" />
+  <xs:element name="reuseSubscriberSourceFilter" type="tns:reuseSubscriberSourceFilter" />
+  <xs:element name="reuseSubscriberSourceFilterResponse" type="tns:reuseSubscriberSourceFilterResponse" />
+  <xs:element name="sendCampaign" type="tns:sendCampaign" />
+  <xs:element name="sendCampaignResponse" type="tns:sendCampaignResponse" />
+  <xs:element name="sendImmediateMessage" type="tns:sendImmediateMessage" />
+  <xs:element name="sendImmediateMessageResponse" type="tns:sendImmediateMessageResponse" />
+  <xs:element name="sendImmediateMessageSDataCData" type="tns:sendImmediateMessageSDataCData" />
+  <xs:element name="sendImmediateMessageSDataCDataCA" type="tns:sendImmediateMessageSDataCDataCA" />
+  <xs:element name="sendImmediateMessageSDataCDataCAResponse" type="tns:sendImmediateMessageSDataCDataCAResponse" />
+  <xs:element name="sendImmediateMessageSDataCDataResponse" type="tns:sendImmediateMessageSDataCDataResponse" />
+  <xs:element name="sendImmediateMessageSDataCIdCA" type="tns:sendImmediateMessageSDataCIdCA" />
+  <xs:element name="sendImmediateMessageSDataCIdCAResponse" type="tns:sendImmediateMessageSDataCIdCAResponse" />
+  <xs:element name="sendImmediateMessageSIdCData" type="tns:sendImmediateMessageSIdCData" />
+  <xs:element name="sendImmediateMessageSIdCDataCA" type="tns:sendImmediateMessageSIdCDataCA" />
+  <xs:element name="sendImmediateMessageSIdCDataCAResponse" type="tns:sendImmediateMessageSIdCDataCAResponse" />
+  <xs:element name="sendImmediateMessageSIdCDataResponse" type="tns:sendImmediateMessageSIdCDataResponse" />
+  <xs:element name="sendImmediateMessageSdataCAl" type="tns:sendImmediateMessageSdataCAl" />
+  <xs:element name="sendImmediateMessageSdataCAlCA" type="tns:sendImmediateMessageSdataCAlCA" />
+  <xs:element name="sendImmediateMessageSdataCAlCAResponse" type="tns:sendImmediateMessageSdataCAlCAResponse" />
+  <xs:element name="sendImmediateMessageSdataCAlResponse" type="tns:sendImmediateMessageSdataCAlResponse" />
+  <xs:element name="sendImmediateMessageSidCAl" type="tns:sendImmediateMessageSidCAl" />
+  <xs:element name="sendImmediateMessageSidCAlCA" type="tns:sendImmediateMessageSidCAlCA" />
+  <xs:element name="sendImmediateMessageSidCAlCAResponse" type="tns:sendImmediateMessageSidCAlCAResponse" />
+  <xs:element name="sendImmediateMessageSidCAlResponse" type="tns:sendImmediateMessageSidCAlResponse" />
+  <xs:element name="sendImmediateMessageSidCid" type="tns:sendImmediateMessageSidCid" />
+  <xs:element name="sendImmediateMessageSidCidCA" type="tns:sendImmediateMessageSidCidCA" />
+  <xs:element name="sendImmediateMessageSidCidCAResponse" type="tns:sendImmediateMessageSidCidCAResponse" />
+  <xs:element name="sendImmediateMessageSidCidResponse" type="tns:sendImmediateMessageSidCidResponse" />
+  <xs:element name="setCampaignRecurrency" type="tns:setCampaignRecurrency" />
+  <xs:element name="setCampaignRecurrencyResponse" type="tns:setCampaignRecurrencyResponse" />
+  <xs:element name="startSubscriberDataExchange" type="tns:startSubscriberDataExchange" />
+  <xs:element name="startSubscriberDataExchangeResponse" type="tns:startSubscriberDataExchangeResponse" />
+  <xs:element name="triggerDeliveryByAlias" type="tns:triggerDeliveryByAlias" />
+  <xs:element name="triggerDeliveryByAliasResponse" type="tns:triggerDeliveryByAliasResponse" />
+  <xs:element name="triggerDeliveryById" type="tns:triggerDeliveryById" />
+  <xs:element name="triggerDeliveryByIdResponse" type="tns:triggerDeliveryByIdResponse" />
+  <xs:element name="updateSubscriber" type="tns:updateSubscriber" />
+  <xs:element name="updateSubscriberResponse" type="tns:updateSubscriberResponse" />
+  <xs:element name="uploadMediaContent" type="tns:uploadMediaContent" />
+  <xs:element name="uploadMediaContentResponse" type="tns:uploadMediaContentResponse" />
+  <xs:complexType name="keepaliveToken">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="keepaliveTokenResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="triggerDeliveryByAlias">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="campaignName" type="xs:string" minOccurs="0" />
+      <xs:element name="subscriberIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="triggerDeliveryByAliasResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addSubscriberSourceFilter">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="filter" type="ns1:SubscriberSourceFilter" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addSubscriberSourceFilterResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:SubscriberSourceFilter" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAvailableCommunicationCategories">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAvailableCommunicationCategoriesResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:CommunicationCategory" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getArchivedSubscriberSourceFilter">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="filterIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getArchivedSubscriberSourceFilterResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:SubscriberSourceFilter" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getXMLDeliveries">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="xmlDeliveryStatus" type="tns:xmlDeliveryStatusType" minOccurs="0" />
+      <xs:element name="lookupPrefs" type="ns1:LookupPreferences" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getXMLDeliveriesResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:XMLDeliveryInfos" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="xmlDeliveryInfo">
+    <xs:sequence>
+      <xs:element name="beginsAt" type="xs:dateTime" minOccurs="0" />
+      <xs:element name="configurationId" type="xs:int" minOccurs="0" />
+      <xs:element name="configurationName" type="xs:string" minOccurs="0" />
+      <xs:element name="endsAt" type="xs:dateTime" minOccurs="0" />
+      <xs:element name="fileName" type="xs:string" minOccurs="0" />
+      <xs:element name="host" type="xs:string" minOccurs="0" />
+      <xs:element name="id" type="xs:int" minOccurs="0" />
+      <xs:element name="lastModified" type="xs:dateTime" minOccurs="0" />
+      <xs:element name="status" type="tns:xmlDeliveryStatusType" minOccurs="0" />
+      <xs:element name="subStatus" type="tns:xmlDeliverySubStatusType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendCampaign">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="campaignIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendCampaignResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="countSubscribers">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="sourceIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="countSubscribersResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCampaignsSentBetween">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="channel" type="ns1:channel" minOccurs="0" />
+      <xs:element name="periodStart" type="xs:dateTime" minOccurs="0" />
+      <xs:element name="periodEnd" type="xs:dateTime" minOccurs="0" />
+      <xs:element name="lookupPrefs" type="ns1:CampaignLookupPreferences" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCampaignsSentBetweenResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Campaigns" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessageSdataCAlCA">
+    <xs:sequence>
+      <xs:element name="apiKey" type="xs:string" minOccurs="0" />
+      <xs:element name="userKey" type="xs:string" minOccurs="0" />
+      <xs:element name="campaignAlias" type="xs:string" minOccurs="0" />
+      <xs:element name="userData" type="ns1:Subscriber" minOccurs="0" />
+      <xs:element name="includeDefaultAttachments" type="xs:boolean" />
+      <xs:element name="attachments" type="ns1:Attachment" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessageSdataCAlCAResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getXMLDeliveryTransitions">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="xmlDeliveryId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getXMLDeliveryTransitionsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:xmlDeliveryTransitionInfo" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="xmlDeliveryTransitionInfo">
+    <xs:sequence>
+      <xs:element name="beginsAt" type="xs:dateTime" minOccurs="0" />
+      <xs:element name="endsAt" type="xs:dateTime" minOccurs="0" />
+      <xs:element name="message" type="xs:string" minOccurs="0" />
+      <xs:element name="status" type="tns:xmlDeliverySubStatusType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCampaignsByNameOrSubject">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="channel" type="ns1:channel" minOccurs="0" />
+      <xs:element name="nameOrSubject" type="xs:string" minOccurs="0" />
+      <xs:element name="lookupPrefs" type="ns1:CampaignLookupPreferences" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCampaignsByNameOrSubjectResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Campaigns" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessageSidCAlCA">
+    <xs:sequence>
+      <xs:element name="apiKey" type="xs:string" minOccurs="0" />
+      <xs:element name="userKey" type="xs:string" minOccurs="0" />
+      <xs:element name="campaignAlias" type="xs:string" minOccurs="0" />
+      <xs:element name="sourceIdentifier" type="xs:int" />
+      <xs:element name="subscriberIdentifier" type="xs:int" />
+      <xs:element name="includeDefaultAttachments" type="xs:boolean" />
+      <xs:element name="attachments" type="ns1:Attachment" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessageSidCAlCAResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addCampaignNote">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="campaignIdentifier" type="xs:int" />
+      <xs:element name="note" type="ns1:CampaignNote" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addCampaignNoteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:CampaignNote" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="triggerDeliveryById">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="campaignIdentifier" type="xs:int" />
+      <xs:element name="subscriberIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="triggerDeliveryByIdResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCampaigns">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="channel" type="ns1:channel" minOccurs="0" />
+      <xs:element name="lookupPrefs" type="ns1:CampaignLookupPreferences" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCampaignsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Campaigns" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getRequestStatus">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="requestIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getRequestStatusResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:ActivityStatus" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateSubscriber">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="sourceIdentifier" type="xs:int" />
+      <xs:element name="subscriber" type="ns1:Subscriber" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateSubscriberResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Subscriber" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCryptoKey">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="recipient" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCryptoKeyResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="archiveSubscriberSourceFilter">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="filterIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="archiveSubscriberSourceFilterResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="cloneAndSendCampaign">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="campaignIdentifier" type="xs:int" />
+      <xs:element name="notBefore" type="xs:dateTime" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cloneAndSendCampaignResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findMessageModels">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="channel" type="ns1:channel" minOccurs="0" />
+      <xs:element name="lookupPrefs" type="ns1:LookupPreferences" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findMessageModelsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:MessageModels" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="uploadMediaContent">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="reference" type="xs:string" minOccurs="0" />
+      <xs:element name="fileName" type="xs:string" minOccurs="0" />
+      <xs:element name="content" type="xs:base64Binary" minOccurs="0" />
+      <xs:element name="overwrite" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="uploadMediaContentResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessageSDataCDataCA">
+    <xs:sequence>
+      <xs:element name="apiKey" type="xs:string" minOccurs="0" />
+      <xs:element name="userKey" type="xs:string" minOccurs="0" />
+      <xs:element name="campaign" type="ns1:Campaign" minOccurs="0" />
+      <xs:element name="userData" type="ns1:Subscriber" minOccurs="0" />
+      <xs:element name="includeDefaultAttachments" type="xs:boolean" />
+      <xs:element name="attachments" type="ns1:Attachment" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessageSDataCDataCAResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCampaign">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="campaignIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCampaignResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Campaign" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addSubscribers">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="sourceIdentifier" type="xs:int" />
+      <xs:element name="subscribers" type="ns1:Subscribers" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addSubscribersResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessageSidCid">
+    <xs:sequence>
+      <xs:element name="apiKey" type="xs:string" minOccurs="0" />
+      <xs:element name="userKey" type="xs:string" minOccurs="0" />
+      <xs:element name="campaignIdentifier" type="xs:int" />
+      <xs:element name="sourceIdentifier" type="xs:int" />
+      <xs:element name="subscriberIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessageSidCidResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessageSDataCIdCA">
+    <xs:sequence>
+      <xs:element name="apiKey" type="xs:string" minOccurs="0" />
+      <xs:element name="userKey" type="xs:string" minOccurs="0" />
+      <xs:element name="campaignIdentifier" type="xs:int" />
+      <xs:element name="userData" type="ns1:Subscriber" minOccurs="0" />
+      <xs:element name="includeDefaultAttachments" type="xs:boolean" />
+      <xs:element name="attachments" type="ns1:Attachment" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessageSDataCIdCAResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSubscriberSourceFilter">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="filterIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSubscriberSourceFilterResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:SubscriberSourceFilter" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findArchivedFiltersBySubscriberSource">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="sourceIdentifier" type="xs:int" />
+      <xs:element name="lookupPrefs" type="ns1:LookupPreferences" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findArchivedFiltersBySubscriberSourceResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:SubscriberSourceFilters" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAttachmentByCampaignId">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="campaignIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAttachmentByCampaignIdResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Attachment" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMessageModelById">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="modelId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMessageModelByIdResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Message" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSubscriber">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="sourceIdentifier" type="xs:int" />
+      <xs:element name="subscriberIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSubscriberResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Subscriber" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="borrowToken">
+    <xs:sequence>
+      <xs:element name="apiKey" type="xs:string" minOccurs="0" />
+      <xs:element name="userKey" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="borrowTokenResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:AuthToken" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modifySubscriberSubscriptionStatus">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="webFormCode" type="xs:string" minOccurs="0" />
+      <xs:element name="subscriberIdentifier" type="xs:int" />
+      <xs:element name="isSubscribed" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modifySubscriberSubscriptionStatusResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="findPeriodicCampaigns">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="channel" type="ns1:channel" minOccurs="0" />
+      <xs:element name="lookupPrefs" type="ns1:CampaignLookupPreferences" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findPeriodicCampaignsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Campaigns" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findNotesByCampaign">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="campaignIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findNotesByCampaignResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:CampaignNotes" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modifySubscriberSubscriptionStatusByMailqId">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="webFormCode" type="xs:string" minOccurs="0" />
+      <xs:element name="subscriberIdentifier" type="xs:int" />
+      <xs:element name="mailqId" type="xs:long" />
+      <xs:element name="isSubscribed" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modifySubscriberSubscriptionStatusByMailqIdResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="isSubscriberSourceLocked">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="subscriberSourceId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="isSubscriberSourceLockedResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="startSubscriberDataExchange">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="dataExchangeConfigIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="startSubscriberDataExchangeResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="removeSubscriber">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="sourceIdentifier" type="xs:int" />
+      <xs:element name="recipientIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeSubscriberResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCampaignDeliveryStatus">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="campaignIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCampaignDeliveryStatusResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:deliveryStatus" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addAttachment">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="campaignIdentifier" type="xs:int" />
+      <xs:element name="attachments" type="ns1:Attachment" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addAttachmentResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Attachment" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findFiltersBySubscriberSource">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="sourceIdentifier" type="xs:int" />
+      <xs:element name="lookupPrefs" type="ns1:LookupPreferences" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findFiltersBySubscriberSourceResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:SubscriberSourceFilters" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setCampaignRecurrency">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="campaignIdentifier" type="xs:int" />
+      <xs:element name="periodicity" type="xs:string" minOccurs="0" />
+      <xs:element name="enable" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setCampaignRecurrencyResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="countSubscribersIncludedInFilter">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="sourceIdentifier" type="xs:int" />
+      <xs:element name="filterIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="countSubscribersIncludedInFilterResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessageSidCidCA">
+    <xs:sequence>
+      <xs:element name="apiKey" type="xs:string" minOccurs="0" />
+      <xs:element name="userKey" type="xs:string" minOccurs="0" />
+      <xs:element name="campaignIdentifier" type="xs:int" />
+      <xs:element name="sourceIdentifier" type="xs:int" />
+      <xs:element name="subscriberIdentifier" type="xs:int" />
+      <xs:element name="includeDefaultAttachments" type="xs:boolean" />
+      <xs:element name="attachments" type="ns1:Attachment" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessageSidCidCAResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findSubscriberSources">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="lookupPrefs" type="ns1:LookupPreferences" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findSubscriberSourcesResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:SubscriberSources" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findMessageModelsBySubscriberSource">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="sourceId" type="xs:int" />
+      <xs:element name="lookupPrefs" type="ns1:LookupPreferences" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findMessageModelsBySubscriberSourceResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:MessageModels" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addSubscriberSource">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="subscriberSource" type="ns1:SubscriberSource" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addSubscriberSourceResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:SubscriberSource" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessageSdataCAl">
+    <xs:sequence>
+      <xs:element name="apiKey" type="xs:string" minOccurs="0" />
+      <xs:element name="userKey" type="xs:string" minOccurs="0" />
+      <xs:element name="campaignAlias" type="xs:string" minOccurs="0" />
+      <xs:element name="userData" type="ns1:Subscriber" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessageSdataCAlResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCampaignsByModel">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="channel" type="ns1:channel" minOccurs="0" />
+      <xs:element name="modelIdentifier" type="xs:int" />
+      <xs:element name="lookupPrefs" type="ns1:CampaignLookupPreferences" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCampaignsByModelResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Campaigns" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessageSDataCData">
+    <xs:sequence>
+      <xs:element name="apiKey" type="xs:string" minOccurs="0" />
+      <xs:element name="userKey" type="xs:string" minOccurs="0" />
+      <xs:element name="campaign" type="ns1:Campaign" minOccurs="0" />
+      <xs:element name="userData" type="ns1:Subscriber" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessageSDataCDataResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSubscriberDataExchangeStatus">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="dataExchangeConfigIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSubscriberDataExchangeStatusResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:ActivityStatus" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessageSIdCDataCA">
+    <xs:sequence>
+      <xs:element name="apiKey" type="xs:string" minOccurs="0" />
+      <xs:element name="userKey" type="xs:string" minOccurs="0" />
+      <xs:element name="campaign" type="ns1:Campaign" minOccurs="0" />
+      <xs:element name="sourceIdentifier" type="xs:int" />
+      <xs:element name="subscriberIdentifier" type="xs:int" />
+      <xs:element name="includeDefaultAttachments" type="xs:boolean" />
+      <xs:element name="attachments" type="ns1:Attachment" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessageSIdCDataCAResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessage">
+    <xs:sequence>
+      <xs:element name="apiKey" type="xs:string" minOccurs="0" />
+      <xs:element name="userKey" type="xs:string" minOccurs="0" />
+      <xs:element name="campaignIdentifier" type="xs:int" />
+      <xs:element name="userData" type="ns1:Subscriber" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessageResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessageSIdCData">
+    <xs:sequence>
+      <xs:element name="apiKey" type="xs:string" minOccurs="0" />
+      <xs:element name="userKey" type="xs:string" minOccurs="0" />
+      <xs:element name="campaign" type="ns1:Campaign" minOccurs="0" />
+      <xs:element name="sourceIdentifier" type="xs:int" />
+      <xs:element name="subscriberIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessageSIdCDataResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCampaignsBySubscriberSourceFilter">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="channel" type="ns1:channel" minOccurs="0" />
+      <xs:element name="subscriberSourceFilterId" type="xs:int" />
+      <xs:element name="lookupPrefs" type="ns1:CampaignLookupPreferences" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCampaignsBySubscriberSourceFilterResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Campaigns" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessageSidCAl">
+    <xs:sequence>
+      <xs:element name="apiKey" type="xs:string" minOccurs="0" />
+      <xs:element name="userKey" type="xs:string" minOccurs="0" />
+      <xs:element name="campaignAlias" type="xs:string" minOccurs="0" />
+      <xs:element name="sourceIdentifier" type="xs:int" />
+      <xs:element name="subscriberIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendImmediateMessageSidCAlResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCampaignsByStatus">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="channel" type="ns1:channel" minOccurs="0" />
+      <xs:element name="status" type="ns1:deliveryStatus" minOccurs="0" />
+      <xs:element name="lookupPrefs" type="ns1:CampaignLookupPreferences" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCampaignsByStatusResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Campaigns" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSubscriberSource">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="sourceIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSubscriberSourceResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:SubscriberSource" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findTriggerableCampaigns">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="channel" type="ns1:channel" minOccurs="0" />
+      <xs:element name="lookupPrefs" type="ns1:CampaignLookupPreferences" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findTriggerableCampaignsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Campaigns" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findSubscribers">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="sourceIdentifier" type="xs:int" />
+      <xs:element name="attribute" type="ns1:SubscriberAttribute" minOccurs="0" />
+      <xs:element name="lookupPrefs" type="ns1:LookupPreferences" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findSubscribersResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Subscribers" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCampaignsByNote">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="channel" type="ns1:channel" minOccurs="0" />
+      <xs:element name="note" type="ns1:CampaignNote" minOccurs="0" />
+      <xs:element name="lookupPrefs" type="ns1:CampaignLookupPreferences" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCampaignsByNoteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Campaigns" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="invalidateToken">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="invalidateTokenResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="publishOnWeb">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="campaignIdentifier" type="xs:int" minOccurs="0" />
+      <xs:element name="testCampaignIdentifier" type="xs:int" minOccurs="0" />
+      <xs:element name="fileName" type="xs:string" minOccurs="0" />
+      <xs:element name="content" type="xs:base64Binary" minOccurs="0" />
+      <xs:element name="overwrite" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="publishOnWebResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reuseSubscriberSourceFilter">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="filterIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reuseSubscriberSourceFilterResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="createCampaign">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="campaign" type="ns1:Campaign" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createCampaignResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Campaign" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addSubscriber">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="sourceIdentifier" type="xs:int" />
+      <xs:element name="subscriber" type="ns1:Subscriber" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addSubscriberResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Subscriber" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTrackedLinks">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="campaignId" type="xs:int" />
+      <xs:element name="categoryId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTrackedLinksResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:TrackedLink" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCampaignFeedback">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="campaignIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCampaignFeedbackResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:CampaignFeedback" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createMessageModel">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="model" type="ns1:Message" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createMessageModelResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Message" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestCampaignFeedbackReport">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="campaignIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestCampaignFeedbackReportResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="cancelCampaign">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="campaignIdentifier" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelCampaignResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="findSubscribersIncludedInFilter">
+    <xs:sequence>
+      <xs:element name="token" type="ns1:AuthToken" minOccurs="0" />
+      <xs:element name="sourceIdentifier" type="xs:int" />
+      <xs:element name="filterIdentifier" type="xs:int" />
+      <xs:element name="lookupPrefs" type="ns1:LookupPreferences" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findSubscribersIncludedInFilterResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Subscribers" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="xmlDeliveryStatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUCCESS" />
+      <xs:enumeration value="LOADING" />
+      <xs:enumeration value="ERROR" />
+      <xs:enumeration value="RECOVERED" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="xmlDeliverySubStatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DELIVERY_STARTED" />
+      <xs:enumeration value="DELIVERY_FINISHED" />
+      <xs:enumeration value="RECIPIENTS_ADDED" />
+      <xs:enumeration value="RECIPIENTS_UPLOAD_STARTED" />
+      <xs:enumeration value="RECIPIENTS_UPLOAD_FINISHED" />
+      <xs:enumeration value="SEMAPHORE_FOUND" />
+      <xs:enumeration value="SEMAPHORE_DELETED" />
+      <xs:enumeration value="XML_CONFIGURATION_FILE_FOUND" />
+      <xs:enumeration value="XMLD_CONFIGURATION_ERROR" />
+      <xs:enumeration value="API_COMMUNICATION_ERROR" />
+      <xs:enumeration value="XML_ERROR" />
+      <xs:enumeration value="SERVER_COMMUNICATION_ERROR" />
+      <xs:enumeration value="GENERIC_ERROR" />
+      <xs:enumeration value="DELIVERY_ID" />
+      <xs:enumeration value="DELIVERY_ID_TEST" />
+      <xs:enumeration value="DELIVERY_CONTENT" />
+      <xs:enumeration value="DOWNLOAD_XML_COMPLETED" />
+      <xs:enumeration value="DOWNLOAD_CSV_ZIP_COMPLETED" />
+      <xs:enumeration value="USER_REQUESTING" />
+      <xs:enumeration value="QUALIFIER_ID" />
+      <xs:enumeration value="QUALIFIER_TEST_ID" />
+      <xs:enumeration value="INTERNAL_ERROR" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="deliveryRoleType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DELIVERY_ROLE_NONE" />
+      <xs:enumeration value="DELIVERY_ROLE_MASTER" />
+      <xs:enumeration value="DELIVERY_ROLE_SPLIT_BASE" />
+      <xs:enumeration value="DELIVERY_ROLE_SPLIT" />
+      <xs:enumeration value="DELIVERY_ROLE_TEST_MASTER" />
+      <xs:enumeration value="DELIVERY_ROLE_TEST_SPLIT" />
+      <xs:enumeration value="DELIVERY_ROLE_TEST_WINNER" />
+      <xs:enumeration value="DELIVERY_ROLE_BCC" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

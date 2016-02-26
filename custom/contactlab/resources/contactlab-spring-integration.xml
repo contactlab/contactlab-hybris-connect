@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:int-sftp="http://www.springframework.org/schema/integration/sftp"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+           http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
+           http://www.springframework.org/schema/integration/sftp http://www.springframework.org/schema/integration/sftp/spring-integration-sftp.xsd">
+
+    <int:logging-channel-adapter id="logger" level="DEBUG"/>
+           
+    <!-- <bean id="exportContactlabEmailSubscriptionPipeline" class="de.hybris.platform.acceleratorservices.dataexport.generic.config.PipelineConfig">
+        <property name="query" ref="exportContactlabEmailSubscriptionQuery" />
+        <property name="itemConverter" ref="contactlabEmailSubscriptionConverter" />
+        <property name="outputConverter" ref="convertEmailSubscriptionsToXML" /> 
+        <property name="filename" value="headers.event.code + '.txt'" />
+    </bean>
+
+	<alias name="defaultExportContactlabEmailSubscriptionQuery" alias="exportContactlabEmailSubscriptionQuery"/>
+	<bean id="defaultExportContactlabEmailSubscriptionQuery" class="de.hybris.platform.acceleratorservices.dataexport.generic.query.impl.FlexibleSearchExportQuery" >
+		<property name="flexibleSearchService" ref="flexibleSearchService"/>
+		<property name="query" value="SELECT {es.pk} FROM {EmailSubscription AS es
+			LEFT JOIN Customer AS c ON {es.customer}={c.pk}
+			LEFT JOIN Address AS dsa ON {c.defaultShipmentAddress}={dsa.pk}
+			LEFT JOIN Address AS dpa ON {c.defaultPaymentAddress}={dpa.pk}}
+			WHERE {es.toBeExported} = true
+					OR ( {es.lastExportTime} < {c.modifiedTime} or {es.lastExportTime} < {a.modifiedTime} )"/>
+		<property name="parameters">
+			<map>
+				<entry key="cmsSite" value="payload.site"/>
+			</map>
+		</property>
+		<property name="impersonationService" ref="impersonationService"/>
+	</bean> -->
+
+	<bean id="sftpSessionFactory"
+		class="org.springframework.integration.sftp.session.DefaultSftpSessionFactory"
+		scope="tenant">
+		<property name="host" value="${contactlab.sftp.address}" />
+		<property name="port" value="${contactlab.sftp.port}" />
+		<property name="user" value="${contactlab.sftp.username}" />
+		<property name="password" value="${contactlab.sftp.password}" />
+	</bean>
+
+	<int:channel id="sftpChannel" />
+
+	<int-sftp:outbound-channel-adapter
+		id="sftpOutbound" channel="sftpChannel" remote-directory="${contactlab.sftp.directory}"
+		session-factory="sftpSessionFactory" />
+
+</beans>

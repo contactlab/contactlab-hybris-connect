@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+  <bean id="contactlabaddonCoreDataImportedEventListener" parent="abstractCoreDataImportedEventListener">
+    <property name="supportedChannels">
+      <list value-type="de.hybris.platform.commerceservices.enums.SiteChannel">
+        <value>B2C</value>
+        <value>B2B</value>
+      </list>
+    </property>
+    <property name="addonExtensionMetadata">
+      <bean class="de.hybris.platform.addonsupport.data.AddonExtensionMetadata">
+        <property name="baseExtensionName" value="contactlabaddon" />
+      </bean>
+    </property>
+  </bean>
+  <bean id="contactlabaddonSampleDataEventListener" parent="abstractGenericAddOnSampleDataEventListener">
+    <property name="extensionName" value="contactlabaddon" />
+  </bean>
+</beans>

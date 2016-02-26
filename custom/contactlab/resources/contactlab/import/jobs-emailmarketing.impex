@@ -1,0 +1,16 @@
+#
+# CronJob for email marketing
+#
+
+INSERT_UPDATE CronJob	;code[unique=true]							;job(code)[unique=true]			;sessionLanguage(isocode[default='en'])		
+						;exportContactLabEmailSubscriptionCronJob		;exportEmailSubscriptionJobPerformable	
+
+INSERT_UPDATE ServicelayerJob ; code[unique=true]          ; springid                   ; active[default=true] ; removeOnExit[default=true] ; sessionLanguage(isoCode)[default=en]
+                              ; contactlabAbandonedCartJob ; contactlabAbandonedCartJob ; true                 ; true                       ; en
+
+
+$emailResource=jar:com.contactlab.constants.ContactlabConstants&/contactlab/emails                      
+INSERT_UPDATE RendererTemplate ; code[unique=true]              ; contextClass  ; rendererType(code)[default='velocity'] ; description[lang=en]       ; templateScript[lang=en,translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+                               ; template_abandonedcarts_sample ; java.util.Map ;                                        ; Abandoned cart sample HTML ; $emailResource/template_abandonedcarts_sample.vm
+
+                              

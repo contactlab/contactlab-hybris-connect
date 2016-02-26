@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="/platform"/>
+	<classpathentry exported="true" kind="lib" path="resources"/>
+	<classpathentry kind="lib" path="lib/cxf-core-3.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/cxf-rt-frontend-jaxws-3.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/cxf-rt-transports-http-3.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/cxf-rt-frontend-simple-3.0.0.jar"/>
+	<classpathentry kind="src" output="classes" path="src"/>
+	<classpathentry kind="src" output="classes" path="testsrc"/>
+	<classpathentry kind="src" output="classes" path="gensrc"/>
+	<classpathentry kind="output" path="classes"/>
+</classpath>

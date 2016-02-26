@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
+  <extension abstractclassprefix="Generated" classprefix="Contactlabaddon" description="contactlabaddon extension" managername="ContactlabaddonManager" managersuperclass="de.hybris.platform.jalo.extension.Extension"
+    name="contactlabaddon">
+    <requires-extension name="acceleratorstorefrontcommons" />
+    <requires-extension name="addonsupport" />
+    <requires-extension name="cms2" />
+    <requires-extension name="contactlab" />
+    <coremodule generated="true" manager="com.contactlab.addon.jalo.ContactlabaddonManager" packageroot="com.contactlab.addon" />
+    <webmodule jspcompile="false" webroot="/contactlabaddon" />
+  </extension>
+</extensioninfo>

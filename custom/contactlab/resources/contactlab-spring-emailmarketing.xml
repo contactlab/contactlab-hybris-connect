@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop.xsd"
+  default-lazy-init="false">
+
+	<!-- IMPEXes -->
+  <bean id="emailMarketingSystemSetup" class="com.contactlab.systemsetup.ContactlabSystemSetup" parent="abstractCoreSystemSetup" />
+
+	<!-- INTERCEPTORs -->
+  <bean id="emailSubscriptionContactAddressPrepareInterceptor" class="com.contactlab.interceptors.EmailSubscriptionContactAddressPrepareInterceptor" />
+  <bean id="emailSubscriptionContactAddressPrepareInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+    <property name="interceptor" ref="emailSubscriptionContactAddressPrepareInterceptor" />
+    <property name="typeCode" value="Address" />
+  </bean>
+  <bean id="emailSubscriptionPrepareInterceptor" class="com.contactlab.interceptors.EmailSubscriptionPrepareInterceptor">
+    <property name="timeService" ref="timeService" />
+  </bean>
+  <bean id="emailSubscriptionPrepareInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+    <property name="interceptor" ref="emailSubscriptionPrepareInterceptor" />
+    <property name="typeCode" value="EmailSubscription" />
+  </bean>
+
+
+	<!-- DAOs -->
+  <alias name="defaultEmailSubscriptionDao" alias="emailSubscriptionDao" />
+  <bean id="defaultEmailSubscriptionDao" class="com.contactlab.daos.DefaultEmailSubscriptionDao">
+    <property name="flexibleSearchService" ref="flexibleSearchService" />
+  </bean>
+
+	<!-- SERVICEs -->
+  <alias name="defaultEmailSubscriptionService" alias="emailSubscriptionService" />
+  <bean id="defaultEmailSubscriptionService" class="com.contactlab.services.impl.DefaultEmailSubscriptionService">
+    <property name="userService" ref="userService" />
+    <property name="modelService" ref="modelService" />
+    <property name="flexibleSearchService" ref="flexibleSearchService" />
+  </bean>
+
+
+	<!-- FACADEs -->
+  <alias name="defaultEmailSubscriptionFacade" alias="emailSubscriptionFacade" />
+  <bean id="defaultEmailSubscriptionFacade" class="com.contactlab.facades.DefaultEmailSubscriptionFacade">
+    <property name="emailSubscriptionService" ref="emailSubscriptionService" />
+    <property name="userService" ref="userService" />
+  </bean>
+
+
+	<!-- CONVERTERs -->
+  <alias name="defaultEmailSubscriptionConverter" alias="emailSubscriptionConverter" />
+  <bean id="defaultEmailSubscriptionConverter" class="com.contactlab.converters.EmailSubscriptionConverter">
+    <property name="birthDateFormat" value="dd.MM.yyyy" />
+    <property name="optInDateFormat" value="yyyy-MM-dd hh:mm:ss" />
+  </bean>
+
+	<!-- JOBs -->
+  <bean id="exportEmailSubscriptionJobPerformable" class="com.contactlab.jobs.ExportEmailSubscriptionJobPerformable" parent="abstractJobPerformable">
+    <property name="emailSubscriptionDao" ref="emailSubscriptionDao" />
+    <property name="emailSubscriptionExportService" ref="emailSubscriptionExportService" />
+  </bean>
+</beans>

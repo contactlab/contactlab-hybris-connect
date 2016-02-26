@@ -1,0 +1,864 @@
+#set( $username = $ctx.user.name )
+
+#if ( $ctx.user.name == 'guest' )
+    #set( $username = 'user' )
+#end
+<table group_name="Box Text" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="center" class="">
+<tr>
+    <td style="padding: 0px; vertical-align:top; width:10px;" class="padding"><img style="margin: 0px; padding: 0px; display: block;" src="http://static.contactlab.it/img/spacer.gif" width="10" height="1" border="0"></td>
+    <td style="padding: 0px; vertical-align:top; width:580px;" class="padded" align="center">
+    <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="center" width="100%">
+
+
+    <tr>
+        <td style="padding: 0px; vertical-align:top; width:580px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0"></td>
+    </tr>
+    <tr block_name="Copy" >
+        <td style="padding: 0px; vertical-align:top; width:580px;" class="padded" align="center">
+
+        <span style="font-family:  Arial, Helvetica, sans-serif; text-align: center; font-size: 14px; line-height: 20px; color:#323232" class="onlydesktop" item_name="Text Desktop">
+        Hello $username,<br />
+        You’ve still got a couple of items in your <b>shopping bag</b>.<br />
+        We’d like to remind you that availability is limited and we’d hate for you to miss out so why not complete your purchase now?
+        </span>
+
+        <div class="mobileversion" style="display: none; width: 0; overflow: hidden; max-height:0; min-height: 0; margin: 0; padding: 0; font-size:0; line-height:1px; height: 0px; vertical-align: top" item_name="Text Mobile">
+            <span class="mobileversion"  style="display: none; width: 0; overflow: hidden; font-family:  Arial, Helvetica, sans-serif; text-align: center; font-size: 14px; line-height: 20px; color:#323232">
+            Hello $username,<br />
+            You’ve still got a couple of items in your <b>shopping bag</b>.<br />
+            We’d like to remind you that availability is limited and we’d hate for you to miss out so why not complete your purchase now?
+            </span>
+        </div>
+
+        </td>
+    </tr>
+    <tr>
+        <td style="padding: 0px; vertical-align:top; width:580px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0"></td>
+    </tr>
+
+    </table>
+    </td>
+    <td style="padding: 0px; vertical-align:top; width:10px;" class="padding"><img style="margin: 0px; padding: 0px; display: block;" src="http://static.contactlab.it/img/spacer.gif" width="10" height="1" border="0"></td>
+</tr>
+
+</table>
+<table group_name="5 Columns %d" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="center"  class="">
+<tr>
+    <td style="padding: 0px; vertical-align:top; width:10px;" class="padding"><img style="margin: 0px; padding: 0px; display: block;" src="http://static.contactlab.it/img/spacer.gif" width="10" height="1" border="0"></td>
+    <td style="padding: 0px; vertical-align:top; width:580px;" class="padded" align="center">
+    <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="center" width="100%">
+    <tr>
+        <td style="padding: 0px; vertical-align:top; width:580px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0"></td>
+    </tr>
+    <tr>
+        <td style="padding: 0px; vertical-align:top; width:580px;" class="padded" align="center">
+        <table class="five-col" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="center" width="100%" >
+        <tr>
+            <td style="padding: 0px; vertical-align:top; width:580px;">
+            <table class="columns" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none; width:580px;" border="0" cellpadding="0" cellspacing="0" align="center">
+            <tr>
+              <td style="padding: 0px; vertical-align:top;" >
+
+                <table block_name="Left Column" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="left" class="">
+                <tr>
+                    <td style="padding: 0px; vertical-align:top; width:288px;" class="column">
+                    <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="left">
+                    <tr>
+                         <td style="padding: 0px; vertical-align:top; width:280px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 5px;" src="http://static.contactlab.it/spacer.gif" width="1" height="5" border="0"></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:280px;" class="padded" align="center">
+                        <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="left" width="100%" >
+
+                        </table>
+                        </td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:280px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0"></td>
+                    </tr>
+                    </table>
+                    </td>
+                </tr>
+                </table>
+
+                <!--[if mso]>
+                </td>
+                <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;vertical-align:top;" >
+                <![endif]-->
+                <!-- block{Center1 Column}[copy=no] -->
+                <table block_name="Center1 Column" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="left" class="onlydesktop">
+                <tr>
+                    <td style="padding: 0px; vertical-align:top; width:37px;" class="column">
+                    <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="right">
+                     <tr>
+                        <td style="padding: 0px; vertical-align:top; width:65px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0"></td>
+                    </tr>
+
+
+                    <tr item_name="Text" class="">
+                        <td style="padding: 0px; vertical-align:top; width:100px; color:#595959; font-family: Arial, Helvetica, sans-serif; font-size:12px; line-height:18px;" class="padded" align="right">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:65px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 5px;" src="http://static.contactlab.it/spacer.gif" width="1" height="5" border="0"></td>
+                    </tr>
+                    </table>
+                    </td>
+                </tr>
+                </table>
+
+                <!--[if mso]>
+                </td>
+                <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;vertical-align:top;" >
+                <![endif]-->
+
+                <table block_name="Center2 Column" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="left" class="onlydesktop">
+                <tr>
+                    <td style="padding: 0px; vertical-align:top; width:107px;" class="column">
+                    <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="right">
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:65px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0"></td>
+                    </tr>
+
+
+                    <tr item_name="Text" class="">
+                        <td style="padding: 0px; vertical-align:top; width:100px; color:#595959; font-family: Arial, Helvetica, sans-serif; font-size:12px; line-height:18px;" class="padded" align="right">
+                        <b>QNT</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:65px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 5px;" src="http://static.contactlab.it/spacer.gif" width="1" height="5" border="0"></td>
+                    </tr>
+
+                    </table>
+                    </td>
+                </tr>
+                </table>
+
+                <!--[if mso]>
+                </td>
+                <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;vertical-align:top;" >
+                <![endif]-->
+                
+                <table block_name="Center3 Column" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="left" class="onlydesktop">
+                <tr>
+                    <td style="padding: 0px; vertical-align:top; width:72px;" class="column">
+                    <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="right">
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:65px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0"></td>
+                    </tr>
+
+                    <tr item_name="Text" class="">
+                        <td style="padding: 0px; vertical-align:top; width:65px; color:#595959; font-family: Arial, Helvetica, sans-serif; font-size:12px; line-height:18px;" class="padded" align="right">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:65px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 5px;" src="http://static.contactlab.it/spacer.gif" width="1" height="5" border="0"></td>
+                    </tr>
+
+                    </table>
+                    </td>
+                </tr>
+                </table>
+
+                <!--[if mso]>
+                </td>
+                <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;vertical-align:top;" >
+                <![endif]-->
+                                    
+                <table block_name="Right Column" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="right" class="onlydesktop">
+                <tr>
+                    <td style="padding: 0px; vertical-align:top; width:72px;" class="column">
+                    <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="right">
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:65px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0"></td>
+                    </tr>
+
+
+                    <tr item_name="Text" class="">
+                        <td style="padding: 0px; vertical-align:top; width:65px; color:#595959; font-family: Arial, Helvetica, sans-serif; font-size:12px; line-height:18px;" class="padded" align="right">
+                        <b>PRICE</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:65px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 5px;" src="http://static.contactlab.it/spacer.gif" width="1" height="5" border="0"></td>
+                    </tr>
+
+                    </table>
+                    </td>
+                </tr>
+                </table>
+
+                </td>
+            </tr>
+            </table>
+
+            </td>
+        </tr>
+        </table>
+        </td>
+    </tr>
+    </table>
+    </td>
+    <td style="padding: 0px; vertical-align:top; width:10px;" class="padding"><img style="margin: 0px; padding: 0px; display: block;" src="http://static.contactlab.it/img/spacer.gif" width="10" height="1" border="0"></td>
+</tr>
+</table>
+
+#foreach( $orderData in $ctx.cart.entries )
+ <table group_name="5 Columns %d" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="center"  class="">
+<tr>
+    <td style="padding: 0px; vertical-align:top; width:10px;" class="padding"><img style="margin: 0px; padding: 0px; display: block;" src="http://static.contactlab.it/img/spacer.gif" width="10" height="1" border="0"></td>
+    <td style="padding: 0px; vertical-align:top; width:580px;" class="padded" align="center">
+    <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="center" width="100%">
+    <tr>
+        <td style="padding: 0px; vertical-align:top; width:580px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0"></td>
+    </tr>
+    <tr>
+        <td style="padding: 0px; vertical-align:top; width:580px;" class="padded" align="center">
+        <table class="five-col" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="center" width="100%" >
+        <tr>
+            <td style="padding: 0px; vertical-align:top; width:580px;">
+            <table class="columns" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none; width:580px;" border="0" cellpadding="0" cellspacing="0" align="center">
+            <tr>
+              <td style="padding: 0px; vertical-align:top;" >
+
+                <table block_name="Left Column" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="left" class="">
+                <tr>
+                    <td style="padding: 0px; vertical-align:top; width:288px;" class="column">
+                    <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="left">
+                    <tr>
+                         <td style="padding: 0px; vertical-align:top; width:280px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 5px;" src="http://static.contactlab.it/spacer.gif" width="1" height="5" border="0"></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:280px;" class="padded" align="center">
+                        <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="left" width="100%" >
+                        <tr>
+                            <td item_name="Image" style="padding: 0px; vertical-align:top; width:130px;">
+                                <a href="$ctx.baseUrl$orderData.product.url?utm_campaign=abandoned-cart&utm_medium=email&utm_source=abandoned-cart" target="_blank">
+                                  #foreach($image in $orderData.product.images) #if($image.imageType == "PRIMARY" && $image.format == "thumbnail" )
+                                      <img src="${ctx.mediaBaseUrl}$image.url" alt="" width="130" height="" border="0" style="margin:0px; padding:0px; display:inline;" />
+                                  #end #end
+                                </a>
+                            </td>
+
+                            <td style="padding: 0px; vertical-align:top; width:20px;"><img style="margin: 0px; padding: 0px; display: block;" src="http://static.contactlab.it/img/spacer.gif" width="20" height="1" border="0"></td>
+
+                            <td item_name="Text" style="padding: 0px; vertical-align:top; width:130px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; color:#323232;" align="left">
+                            <b>$orderData.product.name</b><br />
+                            $orderData.product.code 
+                            </td>
+
+                        </tr>
+                        </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:280px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0"></td>
+                    </tr>
+                    </table>
+                    </td>
+                </tr>
+                </table>
+
+                <!--[if mso]>
+                </td>
+                <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;vertical-align:top;" >
+                <![endif]-->
+
+                <table block_name="Center1 Column" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="left" class="">
+                <tr>
+                    <td style="padding: 0px; vertical-align:top; width:37px;" class="column">
+                    <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="right">
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:30px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0" class="onlydesktop"></td>
+                    </tr>
+
+                    <tr item_name="Text" class="">
+                        <td style="padding: 0px; vertical-align:top; width:30px; color:#595959; font-family: Arial, Helvetica, sans-serif; font-size:13px; line-height:18px;" class="padded" align="right">
+                        <span class="onlydesktop"></span>
+                        <div class="mobileversion" style="display: none; width: 0; overflow: hidden; max-height:0; margin: 0; padding: 0;font-size:0; line-height:1px; height: 1px; vertical-align: top" item_name="Title Mobile">
+                            <span class="mobileversion"  style="display: none; width: 0; overflow: hidden; font-family:  Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#4d4d4d; font-weight: bold;">
+                            </span>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:30px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 5px;" src="http://static.contactlab.it/spacer.gif" width="1" height="5" border="0"></td>
+                    </tr>
+
+                    </table>
+                    </td>
+                </tr>
+                </table>
+
+                <!--[if mso]>
+                </td>
+                <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;vertical-align:top;" >
+                <![endif]-->
+
+                <table block_name="Center1 Column" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="left" class="">
+                <tr>
+                    <td style="padding: 0px; vertical-align:top; width:107px;" class="column">
+                    <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="right">
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:100px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0" class="onlydesktop"></td>
+                    </tr>
+
+
+                    <tr item_name="Text" class="">
+                        <td style="padding: 0px; vertical-align:top; width:100px; color:#595959; font-family: Arial, Helvetica, sans-serif; font-size:13px; line-height:18px;" class="padded" align="right">
+                        <span class="onlydesktop">$orderData.quantity</span>
+                        <div class="mobileversion" style="display: none; width: 0; overflow: hidden; max-height:0; margin: 0; padding: 0;font-size:0; line-height:1px; height: 1px; vertical-align: top" item_name="Title Mobile">
+                            <span class="mobileversion"  style="display: none; width: 0; overflow: hidden; font-family:  Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#4d4d4d; font-weight: bold;">
+                             QNT: $orderData.quantity
+                            </span>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:65px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 5px;" src="http://static.contactlab.it/spacer.gif" width="1" height="5" border="0"></td>
+                    </tr>
+
+
+                    </table>
+                    </td>
+                </tr>
+                </table>
+
+                <!--[if mso]>
+                </td>
+                <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;vertical-align:top;" >
+                <![endif]-->
+
+                <table block_name="Center3 Column" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="left" class="">
+                <tr>
+                    <td style="padding: 0px; vertical-align:top; width:72px;" class="column">
+                    <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="right">
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:65px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0" class="onlydesktop"></td>
+                    </tr>
+
+
+                    <tr item_name="Text" class="">
+                        <td style="padding: 0px; vertical-align:top; width:65px; color:#595959; font-family: Arial, Helvetica, sans-serif; font-size:13px; line-height:18px;" class="padded" align="right">
+                        <span class="onlydesktop"></span>
+                        <div class="mobileversion" style="display: none; width: 0; overflow: hidden; max-height:0; margin: 0; padding: 0;font-size:0; line-height:1px; height: 1px; vertical-align: top" item_name="Title Mobile">
+                            <span class="mobileversion"  style="display: none; width: 0; overflow: hidden; font-family:  Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#4d4d4d; font-weight: bold;">
+                            </span>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:65px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 5px;" src="http://static.contactlab.it/spacer.gif" width="1" height="5" border="0"></td>
+                    </tr>
+
+                    </table>
+                    </td>
+                </tr>
+                </table>
+
+                <!--[if mso]>
+                </td>
+                <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;vertical-align:top;" >
+                <![endif]-->
+
+                <table block_name="Right Column" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="right" class="">
+                <tr>
+                    <td style="padding: 0px; vertical-align:top; width:72px;" class="column">
+                    <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="right">
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:65px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0" class="onlydesktop"></td>
+                    </tr>
+
+
+                    <tr item_name="Text" class="">
+                        <td style="padding: 0px; vertical-align:top; width:65px; color:#595959; font-family: Arial, Helvetica, sans-serif; font-size:13px; line-height:18px;" class="padded" align="right">
+                        <span class="onlydesktop">$orderData.totalPrice.formattedValue</span>
+                        <div class="mobileversion" style="display: none; width: 0; overflow: hidden; max-height:0; margin: 0; padding: 0;font-size:0; line-height:1px; height: 1px; vertical-align: top" item_name="Title Mobile">
+                            <span class="mobileversion"  style="display: none; width: 0; overflow: hidden; font-family:  Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#4d4d4d; font-weight: bold;">
+                            PRICE: $orderData.totalPrice.formattedValue
+                            </span>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:65px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0"></td>
+                    </tr>
+
+                    </table>
+                    </td>
+                </tr>
+                </table>
+
+                </td>
+            </tr>
+            </table>
+
+            </td>
+        </tr>
+        </table>
+        </td>
+    </tr>
+    </table>
+    </td>
+    <td style="padding: 0px; vertical-align:top; width:10px;" class="padding"><img style="margin: 0px; padding: 0px; display: block;" src="http://static.contactlab.it/img/spacer.gif" width="10" height="1" border="0"></td>
+</tr>
+</table>
+#end
+
+<table group_name="Box Image and Copy %d" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="center" class="" bgcolor="#e6e6e6" >
+<tr>
+    <td style="padding: 0px; vertical-align:top; width:10px;" class="padding"><img style="margin: 0px; padding: 0px; display: block;" src="http://static.contactlab.it/img/spacer.gif" width="10" height="1" border="0"></td>
+    <td style="padding: 0px; vertical-align:top; width:580px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0"></td>
+    <td style="padding: 0px; vertical-align:top; width:10px;" class="padding"><img style="margin: 0px; padding: 0px; display: block;" src="http://static.contactlab.it/img/spacer.gif" width="10" height="1" border="0"></td>
+</tr>
+<tr>
+    <td style="padding: 0px; vertical-align:top; width:10px;" class="padding"><img style="margin: 0px; padding: 0px; display: block;" src="http://static.contactlab.it/img/spacer.gif" width="10" height="1" border="0"></td>
+    <td style="padding: 0px; vertical-align:top; width:580px; color:#323232; font-family: Arial, Helvetica, sans-serif; font-size:12px; line-height:16px;" class="padded" align="right">
+    <b>TOTAL</b>
+
+    </td>
+
+    <td style="padding: 0px; vertical-align:top; width:10px;" class="padding"><img style="margin: 0px; padding: 0px; display: block;" src="http://static.contactlab.it/img/spacer.gif" width="10" height="1" border="0"></td>
+</tr>
+<tr>
+    <td style="padding: 0px; vertical-align:top; width:10px;" class="padding"><img style="margin: 0px; padding: 0px; display: block;" src="http://static.contactlab.it/img/spacer.gif" width="10" height="1" border="0"></td>
+    <td style="padding: 0px; vertical-align:top; width:580px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0"></td>
+    <td style="padding: 0px; vertical-align:top; width:10px;" class="padding"><img style="margin: 0px; padding: 0px; display: block;" src="http://static.contactlab.it/img/spacer.gif" width="10" height="1" border="0"></td>
+</tr>
+</table>
+
+
+ <table group_name="5 Columns %d" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="center"  class="">
+<tr>
+    <td style="padding: 0px; vertical-align:top; width:10px;" class="padding"><img style="margin: 0px; padding: 0px; display: block;" src="http://static.contactlab.it/img/spacer.gif" width="10" height="1" border="0"></td>
+    <td style="padding: 0px; vertical-align:top; width:580px;" class="padded" align="center">
+    <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="center" width="100%">
+    <tr>
+        <td style="padding: 0px; vertical-align:top; width:580px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0"></td>
+    </tr>
+    <tr>
+        <td style="padding: 0px; vertical-align:top; width:580px;" class="padded" align="center">
+        <table class="five-col" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="center" width="100%" >
+        <tr>
+            <td style="padding: 0px; vertical-align:top; width:580px;">
+            <table class="columns" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none; width:580px;" border="0" cellpadding="0" cellspacing="0" align="center">
+            <tr>
+              <td style="padding: 0px; vertical-align:top;" >
+
+                <table block_name="Left Column" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="left" class="">
+                <tr>
+                    <td style="padding: 0px; vertical-align:top; width:288px;" class="column">
+                    <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="left">
+                    <tr>
+                         <td style="padding: 0px; vertical-align:top; width:280px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 5px;" src="http://static.contactlab.it/spacer.gif" width="1" height="5" border="0"></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:280px;" class="padded" align="center">
+                        <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="left" width="100%" >
+                        <tr>
+
+                            <td item_name="Text" style="padding: 0px; vertical-align:top; width:130px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; color:#323232;" align="left">
+                            <b>SUBTOTAL</b>
+                            </td>
+
+                            <td style="padding: 0px; vertical-align:top; width:20px;"><img style="margin: 0px; padding: 0px; display: block;" src="http://static.contactlab.it/img/spacer.gif" width="20" height="1" border="0"></td>
+
+                            <td item_name="Text" style="padding: 0px; vertical-align:top; width:130px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; color:#323232;" align="left">
+
+                            </td>
+
+                        </tr>
+                        </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:280px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0" class="onlydesktop" ></td>
+                    </tr>
+                    </table>
+                    </td>
+                </tr>
+                </table>
+
+                <!--[if mso]>
+                </td>
+                <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;vertical-align:top;" >
+                <![endif]-->
+
+                <table block_name="Center1 Column" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="left" class="">
+                <tr>
+                    <td style="padding: 0px; vertical-align:top; width:37px;" class="column">
+                    <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="right">
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:30px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0" class="onlydesktop"></td>
+                    </tr>
+
+
+                    <tr item_name="Text" class="">
+                        <td style="padding: 0px; vertical-align:top; width:30px; color:#595959; font-family: Arial, Helvetica, sans-serif; font-size:13px; line-height:18px;" class="padded" align="right">
+                        <span class="onlydesktop"></span>
+                        <div class="mobileversion" style="display: none; width: 0; overflow: hidden; max-height:0; margin: 0; padding: 0;font-size:0; line-height:1px; height: 1px; vertical-align: top" item_name="Title Mobile">
+                            <span class="mobileversion"  style="display: none; width: 0; overflow: hidden; font-family:  Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#4d4d4d; font-weight: bold;">
+                            </span>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:30px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 5px;" src="http://static.contactlab.it/spacer.gif" width="1" height="5" border="0"></td>
+                    </tr>
+
+                    </table>
+                    </td>
+                </tr>
+                </table>
+
+                <table block_name="Center1 Column" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="left" class="">
+                <tr>
+                    <td style="padding: 0px; vertical-align:top; width:107px;" class="column">
+                    <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="right">
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:100px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0" class="onlydesktop"></td>
+                    </tr>
+
+
+                    <tr item_name="Text" class="">
+                        <td style="padding: 0px; vertical-align:top; width:100px; color:#595959; font-family: Arial, Helvetica, sans-serif; font-size:13px; line-height:18px;" class="padded" align="right">
+                        <span class="onlydesktop">$ctx.cart.totalUnitCount</span>
+                        <div class="mobileversion" style="display: none; width: 0; overflow: hidden; max-height:0; margin: 0; padding: 0;font-size:0; line-height:1px; height: 1px; vertical-align: top" item_name="Title Mobile">
+                            <span class="mobileversion"  style="display: none; width: 0; overflow: hidden; font-family:  Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#4d4d4d; font-weight: bold;">
+                            QNT: $ctx.cart.totalUnitCount
+                            </span>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:65px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 5px;" src="http://static.contactlab.it/spacer.gif" width="1" height="5" border="0"></td>
+                    </tr>
+
+
+                    </table>
+                    </td>
+                </tr>
+                </table>
+
+                <!--[if mso]>
+                </td>
+                <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;vertical-align:top;" >
+                <![endif]-->
+
+                <table block_name="Center3 Column" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="left" class="">
+                <tr>
+                    <td style="padding: 0px; vertical-align:top; width:72px;" class="column">
+                    <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="right">
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:65px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0" class="onlydesktop"></td>
+                    </tr>
+
+
+                    <tr item_name="Text" class="">
+                        <td style="padding: 0px; vertical-align:top; width:65px; color:#595959; font-family: Arial, Helvetica, sans-serif; font-size:13px; line-height:18px;" class="padded" align="right">
+                        <span class="onlydesktop"></span>
+                        <div class="mobileversion" style="display: none; width: 0; overflow: hidden; max-height:0; margin: 0; padding: 0;font-size:0; line-height:1px; height: 1px; vertical-align: top" item_name="Title Mobile">
+                            <span class="mobileversion"  style="display: none; width: 0; overflow: hidden; font-family:  Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#4d4d4d; font-weight: bold;">
+                            </span>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:65px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 5px;" src="http://static.contactlab.it/spacer.gif" width="1" height="5" border="0"></td>
+                    </tr>
+
+                    </table>
+                    </td>
+                </tr>
+                </table>
+
+                <!--[if mso]>
+                </td>
+                <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;vertical-align:top;" >
+                <![endif]-->
+
+                <!--[if mso]>
+                </td>
+                <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;vertical-align:top;" >
+                <![endif]-->
+
+                <table block_name="Right Column" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="right" class="">
+                <tr>
+                    <td style="padding: 0px; vertical-align:top; width:72px;" class="column">
+                    <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="right">
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:65px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0" class="onlydesktop"></td>
+                    </tr>
+
+
+                    <tr item_name="Text" class="">
+                        <td style="padding: 0px; vertical-align:top; width:65px; color:#595959; font-family: Arial, Helvetica, sans-serif; font-size:13px; line-height:18px;" class="padded" align="right">
+                        <span class="onlydesktop">$ctx.cart.subTotal.formattedValue</span>
+                        <div class="mobileversion" style="display: none; width: 0; overflow: hidden; max-height:0; margin: 0; padding: 0;font-size:0; line-height:1px; height: 1px; vertical-align: top" item_name="Title Mobile">
+                            <span class="mobileversion"  style="display: none; width: 0; overflow: hidden; font-family:  Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#4d4d4d; font-weight: bold;">
+                            PRICE: $ctx.cart.subTotal.formattedValue
+                            </span>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:65px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 5px;" src="http://static.contactlab.it/spacer.gif" width="1" height="5" border="0"></td>
+                    </tr>
+
+                    </table>
+                    </td>
+                </tr>
+                </table>
+
+                </td>
+            </tr>
+            </table>
+
+            </td>
+        </tr>
+        </table>
+        </td>
+    </tr>
+    </table>
+    </td>
+    <td style="padding: 0px; vertical-align:top; width:10px;" class="padding"><img style="margin: 0px; padding: 0px; display: block;" src="http://static.contactlab.it/img/spacer.gif" width="10" height="1" border="0"></td>
+</tr>
+</table>
+ <table group_name="Box Image and Copy %d" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="center" class="">
+    <tr>
+        <td style="padding: 0px; vertical-align:top;"><img style="margin: 0px; padding: 0px; display: block; height: 5px;" src="http://static.contactlab.it/spacer.gif" width="1" height="5" border="0"></td>
+    </tr>
+    <tr block_name="Call to action textual" class="">
+        <td style="padding: 0px; vertical-align:top;" align="right">
+        <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" bgcolor="#000000">
+        <tr>
+            <td style="padding: 0px; vertical-align:top; width:10px; height: 30px;"><img style="margin: 0px; padding: 0px; display: block;" src="http://static.contactlab.it/img/spacer.gif" width="10" height="30" border="0"></td>
+            <td style="padding: 0px; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 16px; color:#ffffff; " class="button" align="center" valign="middle">
+                <a href="$ctx.baseUrl/cart?utm_campaign=abandoned-cart&utm_medium=email&utm_source=abandoned-cart" target="_blank" style="font-family: Impact; font-size: 16px; line-height: 20px; color:#ffffff;; text-decoration: none;">
+                RETURN TO MY SHOPPING BAG
+                </a>
+            </td>
+            <td style="padding: 0px; vertical-align:top; width:10px; height: 30px;"><img style="margin: 0px; padding: 0px; display: block;" src="http://static.contactlab.it/img/spacer.gif" width="10" height="30" border="0"></td>
+        </tr>
+        </table>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding: 0px; vertical-align:top; width:580px;" class="padded"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0"></td>
+    </tr>
+
+</table>
+
+#if ( $ctx.productReferences && $ctx.productReferences.size() > 0 )
+<table group_name="Box Triple Column %d" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="center" class="">
+<tr>
+    <td style="padding: 0px; vertical-align:top; width:10px;" class="padding"><img style="margin: 0px; padding: 0px; display: block;" src="http://static.contactlab.it/img/spacer.gif" width="10" height="1" border="0"></td>
+    <td style="padding: 0px; vertical-align:top; width:580px;" class="padded" align="center">
+    <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="center" width="100%">
+    <tr>
+        <td style="padding: 0px; vertical-align:top;"><img style="margin: 0px; padding: 0px; display: block; height: 5px;" src="http://static.contactlab.it/spacer.gif" width="1" height="5" border="0"></td>
+    </tr>
+    <tr>
+        <td style="padding: 0px; vertical-align:top; width:580px;" class="padded" align="center">
+        <table class="three-col" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="center" width="100%" >
+        <tr>
+            <td style="padding: 0px; vertical-align:top; width:580px;">
+            <table class="columns" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="center" width="100%">
+            <tr>
+                <td style="padding: 0px; vertical-align:top;">
+
+                <table block_name="Left Column" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="left">
+                <tr>
+                    <td style="padding: 0px; vertical-align:top; width:200px;" class="column" align="left">
+                    <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" class="center">
+                    <tr>
+                        <td style="padding: 0px; vertical-align:top; width:180px;" class="center"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0"></td>
+                    </tr>
+                    <tr item_name="Image" class="center">
+                      <td style="padding: 0px; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 16px; color:#ffffff; " class="button" align="center" valign="middle">
+                          <a href="#" target="_blank" style="font-family: Impact; font-size: 16px; line-height: 20px; color:#000000; text-decoration: none;">
+                            YOU MAY ALSO LIKE
+                          </a>
+                      </td>
+                    </tr>
+
+                    </table>
+                    </td>
+                </tr>
+                </table>
+
+                <!--[if mso]>
+                </td>
+                <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;vertical-align:top;" >
+                <![endif]-->
+
+                <table block_name="Center Column" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="left" class="">
+                <tr>
+                    <td style="padding: 0px; vertical-align:top; width:190px;" class="column">
+
+                    </td>
+                </tr>
+                </table>
+
+                <!--[if mso]>
+                </td>
+                <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;vertical-align:top;" >
+                <![endif]-->
+
+                <table block_name="Right Column" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="right" class="">
+                <tr>
+                    <td style="padding: 0px; vertical-align:top; width:188px;" class="column">
+
+                    </td>
+                </tr>
+                </table>
+
+                </td>
+            </tr>
+            </table>
+            </td>
+        </tr>
+        </table>
+        </td>
+    </tr>
+    </table>
+    </td>
+    <td style="padding: 0px; vertical-align:top; width:10px;" class="padding"><img style="margin: 0px; padding: 0px; display: block;" src="http://static.contactlab.it/img/spacer.gif" width="10" height="1" border="0"></td>
+</tr>
+</table>
+
+<table group_name="Box Triple Column %d" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="center" class="">
+
+<tr>
+    <td style="padding: 0px; vertical-align:top; width:10px;" class="padding"><img style="margin: 0px; padding: 0px; display: block;" src="http://static.contactlab.it/img/spacer.gif" width="10" height="1" border="0"></td>
+    <td style="padding: 0px; vertical-align:top; width:580px;" class="padded" align="center">
+    <table style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="center" width="100%">
+    <tr>
+        <td style="padding: 0px; vertical-align:top;"><img style="margin: 0px; padding: 0px; display: block; height: 5px;" src="http://static.contactlab.it/spacer.gif" width="1" height="5" border="0"></td>
+    </tr>
+    <tr>
+        <td style="padding: 0px; vertical-align:top; width:580px;" class="center" align="center">
+        <table class="three-col" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="center" width="100%" >
+        <tr>
+            <td style="padding: 0px; vertical-align:top; width:580px;">
+            <table class="columns" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="center" width="100%">
+            <tr>
+                <td style="padding: 0px; vertical-align:top;">
+
+                <table block_name="Left Column" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="left">
+                <tr>
+                    <td style="padding: 0px; vertical-align:top; width:200px;" class="column" align="left">
+                    <table style="width:180px; border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" class="center">
+                    <tr>
+                        <td width="180" style="padding: 0px; vertical-align:top; width:180px;" class="center"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0"></td>
+                    </tr>
+
+                    <tr item_name="Image" class="center">
+                        <td width="180" style="padding: 0px; vertical-align:top; width:180px;" class="center" align="center">
+                        #if( $ctx.productReferences.size() > 0 )   
+                            #set( $product = $ctx.productReferences.get(0))
+                            <a href="$ctx.baseUrl$product.url?utm_campaign=abandoned-cart&utm_medium=email&utm_source=abandoned-cart" target="_blank" >
+                                #foreach($image in $product.images) #if($image.imageType == "PRIMARY" && $image.format == "thumbnail" )
+                                    <img src="${ctx.mediaBaseUrl}$image.url" alt="" title="$product.name" width="180" alt="" border="0" class="center" style="margin:0px; padding:0px; display:inline;" />
+                                #end #end
+                            </a>
+                        #end
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="180" style="padding: 0px; vertical-align:top; width:180px;" class="center"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0"></td>
+                    </tr>
+
+                    </table>
+                    </td>
+                </tr>
+                </table>
+                
+                <!--[if mso]>
+                </td>
+                <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;vertical-align:top;" >
+                <![endif]-->
+
+                <table block_name="Center Column" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="left">
+                <tr>
+                    <td style="padding: 0px; vertical-align:top; width:190px;" class="column" align="left">
+                    <table style="width:180px; border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" class="center">
+                    <tr>
+                        <td width="180" style="padding: 0px; vertical-align:top; width:180px;" class="center"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0"></td>
+                    </tr>
+
+                    <tr item_name="Image" class="">
+                        <td width="180" style="padding: 0px; vertical-align:top; width:180px;" class="center" align="center">
+                        #if( $ctx.productReferences.size() > 1 )   
+                            #set( $product = $ctx.productReferences.get(1))
+                            <a href="$ctx.baseUrl$product.url?utm_campaign=abandoned-cart&utm_medium=email&utm_source=abandoned-cart" target="_blank" >
+                                #foreach($image in $product.images) #if($image.imageType == "PRIMARY" && $image.format == "thumbnail" )
+                                    <img src="${ctx.mediaBaseUrl}$image.url" alt="" title="$product.name" width="180" alt="" border="0" class="center" style="margin:0px; padding:0px; display:inline;" />
+                                #end #end
+                            </a>
+                        #end    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="180" style="padding: 0px; vertical-align:top; width:180px;" class="center"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0"></td>
+                    </tr>
+
+                    </table>
+                    </td>
+                </tr>
+                </table>
+
+                <!--[if mso]>
+                </td>
+                <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;vertical-align:top;" >
+                <![endif]-->
+
+                <table block_name="Right Column" style="border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" align="right">
+                <tr>
+                    <td style="padding: 0px; vertical-align:top; width:188px;" class="column" align="right">
+                    <table style="width:180px; border-collapse:collapse; border-spacing:0; -webkit-text-size-adjust:none;" border="0" cellpadding="0" cellspacing="0" class="center">
+                    <tr>
+                        <td width="180" style="padding: 0px; vertical-align:top; width:180px;" class="center"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0"></td>
+                    </tr>
+
+                    <tr item_name="Image" class="">
+                        <td width="180" style="padding: 0px; vertical-align:top; width:180px;" class="center" align="center">
+                        #if( $ctx.productReferences.size() > 2 )   
+                            #set( $product = $ctx.productReferences.get(2))
+                            <a href="$ctx.baseUrl$product.url?utm_campaign=abandoned-cart&utm_medium=email&utm_source=abandoned-cart" target="_blank" >
+                                #foreach($image in $product.images) #if($image.imageType == "PRIMARY" && $image.format == "thumbnail" )
+                                    <img src="${ctx.mediaBaseUrl}$image.url" alt="" title="$product.name" width="180" alt="" border="0" class="center" style="margin:0px; padding:0px; display:inline;" />
+                                #end #end
+                            </a>
+                        #end    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="180" style="padding: 0px; vertical-align:top; width:180px;" class="center"><img style="margin: 0px; padding: 0px; display: block; height: 10px;" src="http://static.contactlab.it/spacer.gif" width="1" height="10" border="0"></td>
+                    </tr>
+
+                    </table>
+                    </td>
+                </tr>
+                </table>
+
+                </td>
+            </tr>
+            </table>
+            </td>
+        </tr>
+        </table>
+        </td>
+    </tr>
+    </table>
+    </td>
+    <td style="padding: 0px; vertical-align:top; width:10px;" class="padding"><img style="margin: 0px; padding: 0px; display: block;" src="http://static.contactlab.it/img/spacer.gif" width="10" height="1" border="0"></td>
+</tr>
+</table>
+#end

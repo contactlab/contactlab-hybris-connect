@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="contactlabaddon_buildcallbacks">
+	
+	<!-- 
+	    Called whenever 'ant ear' is used. this callback can be used to modify the content of the ear file
+	
+	     ${ear.path}: 			path to ear
+	 -->
+	<macrodef name="contactlabaddon_after_build">
+		<sequential>
+
+			<if>
+				<isset property="ext.yacceleratorstorefront.path"/>
+				<then>
+					<echo level="info" message="contactlab addon - Copying custom files to yacceleratorstorefront..."/>
+					
+					<copy todir="${ext.yacceleratorstorefront.path}/web/webroot/WEB-INF/views/desktop/pages/account" overwrite="true">
+						<fileset dir="${ext.contactlabaddon.path}/acceleratoraddon/web/webroot/WEB-INF/views/desktop/pages/account">
+							<include name="**/**.*" />
+						</fileset>
+					</copy>
+					<copy todir="${ext.yacceleratorstorefront.path}/web/webroot/WEB-INF/views/desktop/cms" overwrite="true">
+						<fileset dir="${ext.contactlabaddon.path}/acceleratoraddon/web/webroot/WEB-INF/views/desktop/cms">
+							<include name="**/**.*" />
+						</fileset>
+					</copy>
+				</then>
+			</if>
+		</sequential>
+	</macrodef>
+		
+</project>

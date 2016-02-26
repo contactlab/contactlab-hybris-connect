@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="items.xsd">
+  <collectiontypes>
+    <collectiontype elementtype="BaseStore" code="ContactlabBaseStoreCollection" autocreate="true" />
+  </collectiontypes>
+  <enumtypes>
+    <enumtype code="CampaignType" autocreate="true" generate="true">
+      <value code="MARKETING" />
+      <value code="TRANSACTIONAL" />
+    </enumtype>
+    <enumtype code="EmailMessageType" autocreate="true" generate="true">
+      <value code="DEFAULT" />
+      <value code="CONTACTLAB_SMARTRELAY" />
+    </enumtype>
+  </enumtypes>
+  <relations>
+    <relation code="EmailSubscriptionToCampaignsRelation" generate="true" localized="false" autocreate="true">
+      <deployment table="EmailSubToCampaigns" typecode="3701" />
+      <sourceElement qualifier="emailSubscriptions" type="EmailSubscription" cardinality="many" />
+      <targetElement qualifier="campaigns" type="Campaign" cardinality="many">
+        <modifiers optional="true" />
+      </targetElement>
+    </relation>
+    <relation code="CampaignToEmailMessagesRelation" localized="false" autocreate="true" generate="true">
+      <sourceElement qualifier="campaign" type="Campaign" cardinality="one">
+        <modifiers read="true" write="true" search="true" optional="true" />
+      </sourceElement>
+      <targetElement qualifier="emailMessages" type="EmailMessage" cardinality="many">
+        <modifiers read="true" write="true" search="true" optional="true" />
+      </targetElement>
+    </relation>
+    <relation code="CampaignToEmailPagesRelation" localized="false" autocreate="true" generate="true">
+      <sourceElement qualifier="campaign" type="Campaign" cardinality="one">
+        <modifiers read="true" write="true" search="true" optional="true" />
+      </sourceElement>
+      <targetElement qualifier="emailPages" type="EmailPage" cardinality="many">
+        <modifiers read="true" write="true" search="true" optional="true" />
+      </targetElement>
+    </relation>
+    <relation code="CustomerToEmailSubscriptionRelation" localized="false" autocreate="true" generate="true">
+      <sourceElement qualifier="customer" type="Customer" cardinality="one" />
+      <targetElement qualifier="emailSubscriptions" type="EmailSubscription" cardinality="many">
+        <modifiers optional="true" />
+      </targetElement>
+    </relation>
+  </relations>
+  <itemtypes>
+    <itemtype code="EmailSubscription" autocreate="true" generate="true">
+      <deployment table="EmailSubscription" typecode="30010" />
+      <attributes>
+            <!-- GENERAL attributes -->
+        <attribute qualifier="externalUserId" type="java.lang.Integer">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedEmail" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedTitle" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedMiddleName" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedFirstname" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedLastname" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedBirthDate" type="java.util.Date">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedGender" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedBillingAddress" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedBillingCity" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedBillingPostalCode" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedBillingDistrict" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedBillingRegion" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedBillingCountry" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedBillingPhone" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedBillingCellPhone" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedBillingFax" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedBillingCompany" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedShippingAddress" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedShippingCity" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedShippingPostalCode" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedShippingDistrict" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedShippingRegion" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedShippingCountry" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedShippingPhone" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedShippingCellPhone" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedShippingFax" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedShippingCompany" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="currentSubscribedEmail" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers optional="false" removable="false" />
+        </attribute>
+        <attribute qualifier="optIn" type="java.lang.Boolean">
+          <persistence type="property" />
+          <modifiers optional="false" removable="false" />
+        </attribute>
+        <attribute qualifier="firstOptInTime" type="java.util.Date">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="lastExportTime" type="java.util.Date">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="referral" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+            <!-- DYNAMIC attributes -->
+        <attribute qualifier="title" type="Title">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionTitleDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="firstname" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionFirstnameDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="middlename" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionMiddlenameDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="lastname" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionLastnameDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="birthDate" type="java.util.Date">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionBirthDateDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="gender" type="Gender">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionGenderDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="billingAddress" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionBillingAddressDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="billingCity" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionBillingCityDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="billingPostalcode" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionBillingPostalcodeDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="billingDistrict" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionBillingDistrictDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="billingRegion" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionBillingRegionDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="billingCountry" type="Country">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionBillingCountryDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="billingPhone" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionBillingPhoneDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="billingCellphone" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionBillingCellphoneDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="billingFax" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionBillingFaxDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="billingCompany" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionBillingCompanyDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="shippingAddress" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionShippingAddressDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="shippingCity" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionShippingCityDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="shippingPostalcode" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionShippingPostalcodeDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="shippingDistrict" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionShippingDistrictDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="shippingRegion" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionShippingRegionDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="shippingCountry" type="Country">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionShippingCountryDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="shippingPhone" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionShippingPhoneDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="shippingCellphone" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionShippingCellphoneDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="shippingFax" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionShippingFaxDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="shippingCompany" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="emailSubscriptionShippingCompanyDynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute> 
+  
+				<!-- GENERAL attributes -->
+        <attribute qualifier="toBeExported" type="java.lang.Boolean">
+          <persistence type="property" />
+          <modifiers optional="false" removable="false" />
+        </attribute>
+        <attribute qualifier="exportedLastOrderDate" type="java.util.Date">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedLastOrderValue" type="java.lang.Double">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedLastOrderItemsCount" type="java.lang.Integer">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedTotalOrderValue" type="java.lang.Double">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedTotalOrderItemsCount" type="java.lang.Integer">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedTotalOrderCount" type="java.lang.Integer">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedAverageNumberOfItemsPerOrder" type="java.lang.Double">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedAverageOrderValue" type="java.lang.Double">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedCustomPeriod1OrderValue" type="java.lang.Double">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedCustomPeriod1OrderItemsCount" type="java.lang.Integer">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedCustomPeriod1OrderCount" type="java.lang.Integer">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedCustomPeriod2OrderValue" type="java.lang.Double">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedCustomPeriod2OrderItemsCount" type="java.lang.Integer">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedCustomPeriod2OrderCount" type="java.lang.Integer">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedCustomField1" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedCustomField2" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedCustomField3" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedCustomField4" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedCustomField5" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedCustomField6" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedCustomField7" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedCustomField8" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedCustomField9" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="exportedCustomField10" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+
+				<!-- DYNAMIC attributes -->
+        <attribute qualifier="customField1" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="customField1DynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="customField2" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="customField2DynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="customField3" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="customField3DynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="customField4" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="customField4DynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="customField5" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="customField5DynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="customField6" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="customField6DynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="customField7" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="customField7DynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="customField8" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="customField8DynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="customField9" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="customField9DynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+        <attribute qualifier="customField10" type="java.lang.String">
+          <persistence type="dynamic" attributeHandler="customField10DynamicAttributeHandler" />
+          <modifiers read="true" write="false" removable="false" />
+        </attribute>
+      </attributes>
+      <indexes>
+        <index name="extUserIdIdx" unique="true">
+          <key attribute="externalUserId" />
+        </index>
+      </indexes>
+    </itemtype>
+    <itemtype code="Campaign" autocreate="true" generate="true">
+      <deployment table="contactlab_campaign" typecode="30401" />
+      <attributes>
+        <attribute qualifier="campaignId" type="java.lang.Integer">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="campaignName" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers removable="false" />
+        </attribute>
+        <attribute qualifier="campaignType" type="CampaignType">
+          <persistence type="property" />
+          <modifiers initial="true" optional="false" />
+        </attribute>
+        <attribute qualifier="subscriptionField" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers initial="true" optional="false" />
+        </attribute>
+        <attribute qualifier="webFormCode" type="java.lang.String">
+          <persistence type="property" />
+          <modifiers initial="true" optional="false" />
+        </attribute>
+        <attribute qualifier="defaultOptIn" type="java.lang.Boolean">
+          <persistence type="property" />
+          <modifiers initial="true" optional="false" />
+        </attribute>
+      </attributes>
+    </itemtype>
+    <itemtype code="EmailMessage" autocreate="false" generate="false">
+      <attributes>
+        <attribute qualifier="emailMessageType" type="EmailMessageType">
+          <persistence type="property" />
+          <modifiers initial="true" optional="true" />
+          <defaultvalue>em().getEnumerationValue("EmailMessageType","DEFAULT")</defaultvalue>
+        </attribute>
+      </attributes>
+    </itemtype>
+    <itemtype code="EmailPage" autocreate="false" generate="false">
+      <attributes>
+        <attribute qualifier="emailMessageType" type="EmailMessageType">
+          <persistence type="property" />
+          <modifiers initial="true" optional="true" />
+          <defaultvalue>em().getEnumerationValue("EmailMessageType","DEFAULT")</defaultvalue>
+        </attribute>
+      </attributes>
+    </itemtype>
+    <itemtype code="Cart" autocreate="false" generate="false">
+      <attributes>
+        <attribute type="java.lang.Integer" qualifier="contactlabAbandonedCartCounter">
+          <persistence type="property" />
+        </attribute>
+        <attribute type="java.util.Date" qualifier="contactlabAbandonedCartDate">
+          <persistence type="property" />
+        </attribute>
+      </attributes>
+    </itemtype>
+    <itemtype code="ContactlabAbandonedCartCronJob" extends="CronJob" generate="true" autocreate="true" jaloclass="com.contactlab.jalo.ContactlabAbandonedCartCronJob">
+      <description>Cronjob sending abandoned cart to ContactLab</description>
+      <attributes>
+        <attribute qualifier="stores" type="ContactlabBaseStoreCollection">
+          <persistence type="property" />
+          <modifiers search="true" optional="false" />
+        </attribute>
+        <attribute type="java.lang.Integer" qualifier="delay">
+          <persistence type="property" />
+          <defaultvalue>24</defaultvalue>
+          <modifiers optional="false" />
+        </attribute>
+        <attribute type="java.lang.Integer" qualifier="notificationNumber">
+          <persistence type="property" />
+          <defaultvalue>1</defaultvalue>
+          <modifiers optional="false" />
+        </attribute>
+        <attribute type="RendererTemplate" qualifier="htmlTemplate">
+          <persistence type="property" />
+          <modifiers search="true" optional="false" />
+        </attribute>
+        <attribute type="java.lang.Boolean" qualifier="exportGuest">
+          <persistence type="property" />
+          <defaultvalue>false</defaultvalue>
+          <modifiers search="true" optional="false" />
+        </attribute>        
+        <attribute type="java.lang.Integer" qualifier="emailGroup">
+          <persistence type="property" />
+          <modifiers search="true" optional="false" />
+        </attribute>
+        <attribute type="java.lang.String" qualifier="emailSubject">
+          <persistence type="property" />
+          <modifiers search="true" optional="false" />
+        </attribute>        
+        <attribute type="java.lang.String" qualifier="emailFromName">
+          <persistence type="property" />
+          <modifiers search="true" optional="false" />
+        </attribute>
+        <attribute type="java.lang.String" qualifier="emailFromAddress">
+          <persistence type="property" />
+          <modifiers search="true" optional="false" />
+        </attribute>
+        <attribute type="java.lang.String" qualifier="emailReplyTo">
+          <persistence type="property" />
+          <modifiers search="true" optional="false" />
+        </attribute>        
+        <attribute type="java.lang.Integer" qualifier="emailTemplateId">
+          <persistence type="property" />
+          <modifiers search="true" optional="false" />
+        </attribute>        
+      </attributes>
+    </itemtype>
+  </itemtypes>
+</items>

@@ -1,0 +1,416 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.7-b01-. -->
+<xs:schema xmlns:tns="domain.ws.api.contactlab.com" xmlns:ns1="http://ws.api.contactlab.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="domain.ws.api.contactlab.com">
+  <xs:import namespace="http://ws.api.contactlab.com/" schemaLocation="contactlabwebservice_1.xsd" />
+  <xs:complexType name="AuthToken">
+    <xs:sequence>
+      <xs:element name="content" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubscriberSourceFilter">
+    <xs:sequence>
+      <xs:element name="identifier" type="xs:int" minOccurs="0" />
+      <xs:element name="name" type="xs:string" />
+      <xs:element name="subscriberSourceIdentifier" type="xs:int" minOccurs="0" />
+      <xs:element name="content" type="xs:string" />
+      <xs:element name="extensions" type="xs:string" minOccurs="0" />
+      <xs:element name="type" type="tns:SubscriberSourceFilterType" default="NORMAL" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CommunicationCategory">
+    <xs:sequence>
+      <xs:element name="active" type="xs:boolean" minOccurs="0" />
+      <xs:element name="code" type="xs:string" minOccurs="0" />
+      <xs:element name="identifier" type="xs:int" minOccurs="0" />
+      <xs:element name="name" type="xs:string" minOccurs="0" />
+      <xs:element name="transactional" type="xs:boolean" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LookupPreferences">
+    <xs:sequence>
+      <xs:element name="pageNumber" type="xs:int" default="1" minOccurs="0" />
+      <xs:element name="matchingMode" type="tns:LookupMatchingMode" default="EQUALS" />
+      <xs:element name="sortingMode" type="tns:LookupSortingMode" default="DESCENDING" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CampaignLookupPreferences">
+    <xs:complexContent>
+      <xs:extension base="tns:LookupPreferences">
+        <xs:sequence>
+          <xs:element name="sortingBy" type="tns:CampaignSortingOption" default="IDENTIFIER" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="XMLDeliveryInfos">
+    <xs:complexContent>
+      <xs:extension base="tns:SlicedDataSet">
+        <xs:sequence>
+          <xs:element name="currentPageItems" type="ns1:xmlDeliveryInfo" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SlicedDataSet" abstract="true">
+    <xs:sequence>
+      <xs:element name="currentPageNumber" type="xs:int" default="1" minOccurs="0" />
+      <xs:element name="maxPageNumber" type="xs:int" default="0" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Campaigns">
+    <xs:complexContent>
+      <xs:extension base="tns:SlicedDataSet">
+        <xs:sequence>
+          <xs:element name="currentPageItems" type="tns:Campaign" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Campaign">
+    <xs:sequence>
+      <xs:element name="identifier" type="xs:int" minOccurs="0" />
+      <xs:element name="name" type="xs:string" minOccurs="0" />
+      <xs:element name="alias" type="xs:string" minOccurs="0" />
+      <xs:element name="message" type="tns:Message" />
+      <xs:element name="modifier" type="tns:CampaignType" default="NORMAL" minOccurs="0" />
+      <xs:element name="isDeferred" type="xs:boolean" default="false" />
+      <xs:element name="deferredTo" type="xs:dateTime" minOccurs="0" />
+      <xs:element name="startDate" type="xs:dateTime" minOccurs="0" />
+      <xs:element name="endDate" type="xs:dateTime" minOccurs="0" />
+      <xs:element name="executeTestRender" type="xs:boolean" default="false" />
+      <xs:element name="parentId" type="xs:int" minOccurs="0" />
+      <xs:element name="roleType" type="ns1:deliveryRoleType" minOccurs="0" />
+      <xs:element name="removeDuplicates" type="xs:boolean" default="false" minOccurs="0" />
+      <xs:element name="subscribersCount" type="xs:int" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Message" abstract="true">
+    <xs:sequence>
+      <xs:element name="charset" type="tns:charset" minOccurs="0" />
+      <xs:element name="modelIdentifier" type="xs:int" minOccurs="0" />
+      <xs:element name="recipients" type="tns:Recipients" />
+      <xs:element name="sender" type="tns:Sender" />
+      <xs:element name="prefAttachmentCount" type="xs:int" default="0" />
+      <xs:element name="minAttachmentCount" type="xs:int" default="0" />
+      <xs:element name="maxAttachmentCount" type="xs:int" default="10" />
+      <xs:element name="communicationCategoryIdentifier" type="xs:int" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Recipients">
+    <xs:sequence>
+      <xs:element name="subscriberSourceIdentifier" type="xs:int" />
+      <xs:element name="subscriberSourceFilterIdentifier" type="xs:int" default="0" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Sender">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" />
+      <xs:element name="phone" type="xs:string" minOccurs="0" />
+      <xs:element name="email" type="xs:string" minOccurs="0" />
+      <xs:element name="replyTo" type="xs:string" default="" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TextMessage">
+    <xs:complexContent>
+      <xs:extension base="tns:Message">
+        <xs:sequence>
+          <xs:element name="content" type="xs:string" default="" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EmailMessage">
+    <xs:complexContent>
+      <xs:extension base="tns:Message">
+        <xs:sequence>
+          <xs:element name="subject" type="xs:string" default="" minOccurs="0" />
+          <xs:element name="htmlContent" type="xs:string" default="" minOccurs="0" />
+          <xs:element name="textContent" type="xs:string" default="" minOccurs="0" />
+          <xs:element name="preferredContent" type="tns:PreferredContent" default="BOTH" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FaxMessage">
+    <xs:complexContent>
+      <xs:extension base="tns:Message">
+        <xs:sequence>
+          <xs:element name="content" type="xs:base64Binary" default="" minOccurs="0" />
+          <xs:element name="fileName" type="xs:string" default="" minOccurs="0" />
+          <xs:element name="mimeType" type="tns:MimeType" default="BINARY" minOccurs="0" />
+          <xs:element name="numberOfPages" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SubscriberSources">
+    <xs:complexContent>
+      <xs:extension base="tns:SlicedDataSet">
+        <xs:sequence>
+          <xs:element name="currentPageItems" type="tns:SubscriberSource" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SubscriberSource">
+    <xs:sequence>
+      <xs:element name="identifier" type="xs:int" minOccurs="0" />
+      <xs:element name="name" type="xs:string" />
+      <xs:element name="description" type="xs:string" minOccurs="0" />
+      <xs:element name="subscriberIdentifierFieldName" type="xs:string" minOccurs="0" />
+      <xs:element name="fields" type="tns:SubscriberSourceField" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="charset" type="tns:charset" default="ISO_8859_15" minOccurs="0" />
+      <xs:element name="locked" type="xs:boolean" />
+      <xs:element name="readOnly" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubscriberSourceField">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" />
+      <xs:element name="type" type="tns:field" />
+      <xs:element name="emailField" type="xs:boolean" default="false" minOccurs="0" />
+      <xs:element name="phoneField" type="xs:boolean" default="false" minOccurs="0" />
+      <xs:element name="faxField" type="xs:boolean" default="false" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MessageModels">
+    <xs:complexContent>
+      <xs:extension base="tns:SlicedDataSet">
+        <xs:sequence>
+          <xs:element name="currentPageItems" type="tns:Message" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SubscriberSourceFilters">
+    <xs:complexContent>
+      <xs:extension base="tns:SlicedDataSet">
+        <xs:sequence>
+          <xs:element name="currentPageItems" type="tns:SubscriberSourceFilter" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CampaignNotes">
+    <xs:complexContent>
+      <xs:extension base="tns:SlicedDataSet">
+        <xs:sequence>
+          <xs:element name="currentPageItems" type="tns:CampaignNote" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CampaignNote">
+    <xs:sequence>
+      <xs:element name="identifier" type="xs:int" minOccurs="0" />
+      <xs:element name="name" type="xs:string" />
+      <xs:element name="content" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TrackedLinks">
+    <xs:complexContent>
+      <xs:extension base="tns:SlicedDataSet">
+        <xs:sequence>
+          <xs:element name="currentPageItems" type="tns:TrackedLink" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TrackedLink">
+    <xs:sequence>
+      <xs:element name="identifier" type="xs:int" />
+      <xs:element name="url" type="xs:string" />
+      <xs:element name="clicks" type="xs:int" />
+      <xs:element name="uniqueClicks" type="xs:int" />
+      <xs:element name="category" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Subscribers">
+    <xs:complexContent>
+      <xs:extension base="tns:SlicedDataSet">
+        <xs:sequence>
+          <xs:element name="currentPageItems" type="tns:Subscriber" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Subscriber">
+    <xs:sequence>
+      <xs:element name="identifier" type="xs:int" minOccurs="0" />
+      <xs:element name="attributes" type="tns:SubscriberAttribute" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubscriberAttribute">
+    <xs:sequence>
+      <xs:element name="key" type="xs:string" />
+      <xs:element name="value" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Attachment">
+    <xs:sequence>
+      <xs:element name="identifier" type="xs:int" minOccurs="0" />
+      <xs:element name="campaignIdentifier" type="xs:int" />
+      <xs:element name="name" type="xs:string" />
+      <xs:element name="mimeType" type="tns:MimeType" minOccurs="0" />
+      <xs:element name="content" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CampaignFeedback">
+    <xs:sequence>
+      <xs:element name="campaignIdentifier" type="xs:int" minOccurs="0" />
+      <xs:element name="campaignSize" type="xs:int" minOccurs="0" />
+      <xs:element name="views" type="xs:int" minOccurs="0" />
+      <xs:element name="uniqueViews" type="xs:int" minOccurs="0" />
+      <xs:element name="hiddenViews" type="xs:int" minOccurs="0" />
+      <xs:element name="webMailViews" type="xs:int" minOccurs="0" />
+      <xs:element name="clicks" type="xs:int" minOccurs="0" />
+      <xs:element name="uniqueClicks" type="xs:int" minOccurs="0" />
+      <xs:element name="bounces" type="xs:int" minOccurs="0" />
+      <xs:element name="fblComplaints" type="xs:int" minOccurs="0" />
+      <xs:element name="tafClicks" type="xs:int" minOccurs="0" />
+      <xs:element name="uniqueTafClicks" type="xs:int" minOccurs="0" />
+      <xs:element name="blacklistMatches" type="xs:int" minOccurs="0" />
+      <xs:element name="listunsubscribe" type="xs:int" minOccurs="0" />
+      <xs:element name="delivered" type="xs:int" minOccurs="0" />
+      <xs:element name="cancelled" type="xs:int" minOccurs="0" />
+      <xs:element name="temporaryBlacklistMatches" type="xs:int" minOccurs="0" />
+      <xs:element name="errors" type="xs:int" minOccurs="0" />
+      <xs:element name="unsubscribed" type="xs:int" minOccurs="0" />
+      <xs:element name="updates" type="xs:int" minOccurs="0" />
+      <xs:element name="temporaryBlacklisted" type="xs:int" minOccurs="0" />
+      <xs:element name="blacklisted" type="xs:int" minOccurs="0" />
+      <xs:element name="trackingDetails" type="tns:TrackedLink" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="bounceDetails" type="tns:BounceDetail" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BounceDetail">
+    <xs:sequence>
+      <xs:element name="code" type="xs:int" minOccurs="0" />
+      <xs:element name="description" type="xs:string" minOccurs="0" />
+      <xs:element name="count" type="xs:int" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="SubscriberSourceFilterType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NORMAL" />
+      <xs:enumeration value="TEST" />
+      <xs:enumeration value="BOTH" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="LookupMatchingMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EQUALS" />
+      <xs:enumeration value="LIKE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="LookupSortingMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ASCENDING" />
+      <xs:enumeration value="DESCENDING" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CampaignSortingOption">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IDENTIFIER" />
+      <xs:enumeration value="SUBJECT" />
+      <xs:enumeration value="START_DATE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="charset">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Cp1252" />
+      <xs:enumeration value="ISO_8859_15" />
+      <xs:enumeration value="ISO_8859_1" />
+      <xs:enumeration value="SHIFT_JIS" />
+      <xs:enumeration value="UTF_8" />
+      <xs:enumeration value="UTF_16" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PreferredContent">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SIMPLE_TEXT" />
+      <xs:enumeration value="RICH_TEXT" />
+      <xs:enumeration value="BOTH" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MimeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TIFF" />
+      <xs:enumeration value="MS_WORD" />
+      <xs:enumeration value="MS_EXCEL" />
+      <xs:enumeration value="PDF" />
+      <xs:enumeration value="CSV" />
+      <xs:enumeration value="TXT" />
+      <xs:enumeration value="GIF" />
+      <xs:enumeration value="JPEG" />
+      <xs:enumeration value="PNG" />
+      <xs:enumeration value="BINARY" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CampaignType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NORMAL" />
+      <xs:enumeration value="TEST" />
+      <xs:enumeration value="TRIGGERED" />
+      <xs:enumeration value="PERIODIC" />
+      <xs:enumeration value="SMARTRELAY" />
+      <xs:enumeration value="IMMEDIATE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="field">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FLAG" />
+      <xs:enumeration value="DATE" />
+      <xs:enumeration value="DATETIME" />
+      <xs:enumeration value="DOUBLE" />
+      <xs:enumeration value="INTEGER" />
+      <xs:enumeration value="POSITIVE_INTEGER" />
+      <xs:enumeration value="LONG" />
+      <xs:enumeration value="CHAR" />
+      <xs:enumeration value="STRING" />
+      <xs:enumeration value="TEXT" />
+      <xs:enumeration value="TIME" />
+      <xs:enumeration value="TIMESTAMP" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="channel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EMAIL" />
+      <xs:enumeration value="SMS" />
+      <xs:enumeration value="FAX" />
+      <xs:enumeration value="PUSH" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ActivityStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INREQUEST" />
+      <xs:enumeration value="RUNNING" />
+      <xs:enumeration value="COMPLETED" />
+      <xs:enumeration value="FAILED" />
+      <xs:enumeration value="IGNORE" />
+      <xs:enumeration value="ABORT" />
+      <xs:enumeration value="RETRY" />
+      <xs:enumeration value="TIMED_OUT" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="deliveryStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INTERRUPTED" />
+      <xs:enumeration value="DEAD" />
+      <xs:enumeration value="FAILED" />
+      <xs:enumeration value="NEW" />
+      <xs:enumeration value="READY" />
+      <xs:enumeration value="RUNNING" />
+      <xs:enumeration value="FINISHED" />
+      <xs:enumeration value="WAITING" />
+      <xs:enumeration value="ALMOST_READY" />
+      <xs:enumeration value="PERIODIC" />
+      <xs:enumeration value="HIDDEN" />
+      <xs:enumeration value="TRIGGERED" />
+      <xs:enumeration value="SPLIT_RUNNING" />
+      <xs:enumeration value="MASTER_REMOVE" />
+      <xs:enumeration value="CLOSING" />
+      <xs:enumeration value="IMMEDIATE" />
+      <xs:enumeration value="SMARTRELAY" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

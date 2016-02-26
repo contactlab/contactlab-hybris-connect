@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="contactlabwebservices_buildcallbacks">
+
+	<macrodef name="contactlabwebservices_before_build">
+		<sequential>
+			<property name="extension.contactlabwebservices.home" location="../custom/contactlabwebservices" />
+
+			<echo level="info" message="Generating code using wsdl2java (contactlabwebservices)..." />
+			<echo level="info" message="Base path: ${extension.contactlabwebservices.home}" />
+			<path id="cxf.classpath">
+				<fileset dir="${extension.contactlabwebservices.home}/ext-lib">
+					<include name="*.jar" />
+				</fileset>
+			</path>
+			<taskdef uri="antlib:org.apache.cxf.ant.extensions" resource="org/apache/cxf/ant/extensions/antlib.xml" classpathref="cxf.classpath" />
+			<if>
+				<not>
+					<available file="${extension.contactlabwebservices.home}/gensrc" />
+				</not>
+				<then>
+					<mkdir dir="${extension.contactlabwebservices.home}/gensrc" />
+				</then>
+			</if>
+			<java classname="org.apache.cxf.tools.wsdlto.WSDLToJava" fork="true">
+			    <sysproperty key="javax.xml.accessExternalSchema" value="file" />
+                <arg value="-client" />
+				<arg value="-d" />
+				<arg value="${extension.contactlabwebservices.home}/gensrc" />
+				<arg value="-exsh" />
+				<arg value="true" />
+				<arg value="-frontend" />
+				<arg value="jaxws21" />
+				<arg value="-wsdlLocation" />
+				<arg value="https://soap.contactlab.it/soap/services?wsdl" />
+				<arg value="-mark-generated" />
+				<arg value="${extension.contactlabwebservices.home}/resources/wsdl/contactlabwebservice.wsdl" />
+				<classpath>
+					<path refid="cxf.classpath" />
+				</classpath>
+			</java>
+			<echo level="info" message="Generated code using wsdl2java done (contactlabwebservices)." />
+		  
+		  
+	      <!-- ERROR: in compilazione spacca perchè per l'elemento "option" di tipo "AttrElement" che contiene l'attributo "value" cerca generare anche un XmlElement "value" oltre allo XmlAttribute "value" (conflitto sui nomi) -->  
+	      <!--  -->
+	      <xjc destdir="${extension.contactlabwebservices.home}/gensrc" 
+	           schema="${extension.contactlabwebservices.home}/resources/xsd/contactlab.xsd" 
+	           binding="${extension.contactlabwebservices.home}/resources/xsd/contactlab-bindings.xml" 
+	           package="com.contactlab.xmldelivery" 
+	           extension="true">
+	        <produces dir="${extension.contactlabwebservices.home}/gensrc/com/contactlab/xmldelivery">
+	          <include name="*.java" />
+	        </produces>
+	      
+	        <!--<arg value="-disableXmlSecurity" />-->
+	      </xjc>
+	      <!-- -->  
+		  
+		  
+		</sequential>
+	</macrodef>
+
+</project>

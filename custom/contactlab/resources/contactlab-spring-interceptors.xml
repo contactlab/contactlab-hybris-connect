@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- INTERCEPTORs -->
+	<!-- Campaign -->
+  <bean id="defaultCampaignRemoveInterceptor" class="com.contactlab.interceptors.DefaultCampaignRemoveInterceptor" />
+  <bean id="defaultCampaignRemoveInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+    <property name="interceptor" ref="defaultCampaignRemoveInterceptor" />
+    <property name="typeCode" value="Campaign" />
+  </bean>
+  <bean id="defaultCampaignValidateInterceptor" class="com.contactlab.interceptors.DefaultCampaignValidateInterceptor">
+    <property name="campaignService" ref="campaignService" />
+  </bean>
+  <bean id="defaultCampaignValidateInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+    <property name="interceptor" ref="defaultCampaignValidateInterceptor" />
+    <property name="typeCode" value="Campaign" />
+  </bean>
+  <bean id="defaultCampaignInitDefaultsInterceptor" class="com.contactlab.interceptors.DefaultCampaignInitDefaultsInterceptor">
+    <property name="campaignService" ref="campaignService" />
+  </bean>
+  <bean id="defaultCampaignInitDefaultsInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+    <property name="interceptor" ref="defaultCampaignInitDefaultsInterceptor" />
+    <property name="typeCode" value="Campaign" />
+  </bean>	
+	
+	<!-- EmailSubscription -->
+  <bean id="defaultEmailSubscriptionInitDefaultsInterceptor" class="com.contactlab.interceptors.DefaultEmailSubscriptionInitDefaultsInterceptor" />
+  <bean id="defaultEmailSubscriptionInitDefaultsInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+    <property name="interceptor" ref="defaultEmailSubscriptionInitDefaultsInterceptor" />
+    <property name="typeCode" value="EmailSubscription" />
+  </bean>
+  <bean id="defaultEmailSubscriptionExternalIdPrepareInterceptor" class="com.contactlab.interceptors.DefaultEmailSubscriptionExternalIdPrepareInterceptor">
+    <property name="emailSubscriptionExternalIdGenerator" ref="emailSubscriptionExternalIdGenerator" />
+  </bean>
+  <bean id="defaultEmailSubscriptionExternalIdPrepareInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+    <property name="interceptor" ref="defaultEmailSubscriptionExternalIdPrepareInterceptor" />
+    <property name="typeCode" value="EmailSubscription" />
+  </bean>	
+	
+	<!-- EmailMessage -->
+  <bean id="defaultEmailMessageInitDefaultsInterceptor" class="com.contactlab.interceptors.DefaultEmailMessageInitDefaultsInterceptor" />
+  <bean id="defaultEmailMessageInitDefaultsInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+    <property name="interceptor" ref="defaultEmailMessageInitDefaultsInterceptor" />
+    <property name="typeCode" value="EmailMessage" />
+  </bean>
+  <bean id="defaultEmailMessageLoadInterceptor" class="com.contactlab.interceptors.DefaultEmailMessageLoadInterceptor" />
+  <bean id="defaultEmailMessageLoadInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+    <property name="interceptor" ref="defaultEmailMessageLoadInterceptor" />
+    <property name="typeCode" value="EmailMessage" />
+  </bean>
+  <bean id="defaultEmailMessageValidateInterceptor" class="com.contactlab.interceptors.DefaultEmailMessageValidateInterceptor" />
+  <bean id="defaultEmailMessageValidateInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+    <property name="interceptor" ref="defaultEmailMessageValidateInterceptor" />
+    <property name="typeCode" value="EmailMessage" />
+  </bean>	
+	
+	<!-- EmailPage -->
+  <bean id="defaultEmailPageInitDefaultsInterceptor" class="com.contactlab.interceptors.DefaultEmailPageInitDefaultsInterceptor" />
+  <bean id="defaultEmailPageInitDefaultsInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+    <property name="interceptor" ref="defaultEmailPageInitDefaultsInterceptor" />
+    <property name="typeCode" value="EmailPage" />
+  </bean>
+  <bean id="defaultEmailPageLoadInterceptor" class="com.contactlab.interceptors.DefaultEmailPageLoadInterceptor" />
+  <bean id="defaultEmailPageLoadInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+    <property name="interceptor" ref="defaultEmailPageLoadInterceptor" />
+    <property name="typeCode" value="EmailPage" />
+  </bean>
+  <bean id="defaultEmailPageValidateInterceptor" class="com.contactlab.interceptors.DefaultEmailPageValidateInterceptor" />
+  <bean id="defaultEmailPageValidateInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+    <property name="interceptor" ref="defaultEmailPageValidateInterceptor" />
+    <property name="typeCode" value="EmailPage" />
+  </bean>
+</beans>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop.xsd">
+  
+  <alias name="defaultContactlabCartDao" alias="contactlabCartDao" />
+  <bean id="defaultContactlabCartDao" class="com.contactlab.daos.DefaultContactlabCartDao">
+    <property name="flexibleSearchService" ref="flexibleSearchService" />
+  </bean>
+  
+  <alias name="defaultContactlabCartService" alias="contactlabCartService" />
+  <bean id="defaultContactlabCartService" class="com.contactlab.services.impl.DefaultContactlabCartService">
+    <property name="contactlabCartDao" ref="contactlabCartDao" />
+    <property name="sessionService" ref="sessionService" />
+    <property name="baseSiteService" ref="baseSiteService" />
+    <property name="catalogVersionService" ref="catalogVersionService" />
+    <property name="commerceCartService" ref="commerceCartService" />
+    <property name="commerceProductReferenceService" ref="commerceProductReferenceService" />
+    <property name="productReferenceService" ref="productReferenceService" />
+    <property name="productConverter" ref="productConverter" />
+    <property name="cartConverter" ref="cartConverter" />
+  </bean>
+  
+  <alias name="defaultSFTPService" alias="sFTPService" />
+  <bean id="defaultSFTPService" class="com.contactlab.services.impl.DefaultSFTPService">
+    <property name="timeout" value="30000" />
+    <property name="transferredPath" value="${contactlabs.feed.path}/transferred/" />
+    <property name="enablesftp" value="${contactlabs.sftp.enable:true}" />
+  </bean>    
+  
+  <bean id="contactlabAbandonedCartJob" class="com.contactlab.jobs.ContactlabAbandonedCartJob">
+    <property name="authSuid" value="${contactlabs.auth.suid}" />
+    <property name="authKey" value="${contactlabs.auth.key}" />
+    <property name="deliveryType" value="${contactlabs.deliverytype.method:auto}" />
+    <property name="encoding" value="${contactlabs.message.encoding:utf8}" />
+    <property name="localDirectory" value="${contactlabs.feed.path}/contactlab/" />
+    
+    <property name="contactlabCartService" ref="contactlabCartService" />
+    <property name="modelService" ref="modelService" />
+    <property name="sessionService" ref="sessionService" />
+    <property name="flexibleSearchService" ref="flexibleSearchService" />
+    <property name="rendererService" ref="rendererService" />
+    <property name="sFTPService" ref="sFTPService" />
+    
+    <property name="sftpHost" value="${contactlabs.sftp.hostname}" />
+    <property name="sftpPort" value="${contactlabs.sftp.port}" />
+    <property name="sftpUsername" value="${contactlabs.sftp.username}" />
+    <property name="sftpPassword" value="${contactlabs.sftp.password}" />
+    <property name="sftpDirectory" value="${contactlabs.sftp.abandonedcart.directory}" />
+    
+    <property name="siteBaseUrl" value="${contactlabs.abandonedcart.site.baseurl:}" />
+    <property name="siteBaseUrlResolutionService" ref="siteBaseUrlResolutionService"/>
+  </bean>
+</beans>

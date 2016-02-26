@@ -1,0 +1,17 @@
+<jaxb:bindings version="2.1" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws">
+  <jaxb:globalBindings generateElementProperty="false" generateMixedExtensions="true" localScoping="toplevel">
+    <jaxb:serializable uid="42" />
+    <xjc:simple />
+    <jaxb:javaType name="java.util.Calendar" xmlType="xs:dateTime" parseMethod="javax.xml.bind.DatatypeConverter.parseDateTime" printMethod="javax.xml.bind.DatatypeConverter.printDateTime" />
+    <jaxb:javaType name="java.util.Calendar" xmlType="xs:date" parseMethod="javax.xml.bind.DatatypeConverter.parseDate" printMethod="javax.xml.bind.DatatypeConverter.printDate" />
+    <jaxb:javaType name="java.lang.Integer" xmlType="xs:integer" />
+    <jaxb:javaType name="java.lang.Double" xmlType="xs:decimal" />
+  </jaxb:globalBindings>
+  <jaxb:bindings schemaLocation="contactlab.xsd" node="/xs:schema">
+    <jaxb:bindings node="//xs:complexType[@name='AttrElement']">
+      <jaxb:bindings node=".//xs:attribute[@name='value']">
+        <jaxb:property name="attributeValue"/>
+      </jaxb:bindings>
+    </jaxb:bindings>
+  </jaxb:bindings>  
+</jaxb:bindings>

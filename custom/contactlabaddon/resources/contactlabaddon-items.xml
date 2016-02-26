@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="items.xsd">
+  <itemtypes>
+    <itemtype code="CMSHomePageNewsletterComponent" generate="true" jaloclass="com.contactlab.addon.jalo.cms2.components.CMSHomePageNewsletterComponent" extends="SimpleCMSComponent"
+      autocreate="true">
+      <description>It represents the component for opening the lightbox on the homepage.</description>
+    </itemtype>
+  </itemtypes>
+</items>

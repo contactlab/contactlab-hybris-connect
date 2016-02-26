@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <!-- DYNAMIC ATTRIBUTES HANDLERs -->
+  <bean id="emailSubscriptionTitleDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultPaymentAddress != null ? customer.defaultPaymentAddress.title : exportedTitle) : exportedTitle" />
+  </bean>
+  <bean id="emailSubscriptionFirstnameDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultPaymentAddress != null ? customer.defaultPaymentAddress.firstname : exportedFirstname) : exportedFirstname" />
+  </bean>
+  <bean id="emailSubscriptionMiddlenameDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultPaymentAddress != null ? customer.defaultPaymentAddress.middlename : exportedMiddleName) : exportedMiddleName" />
+  </bean>
+  <bean id="emailSubscriptionLastnameDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultPaymentAddress != null ? customer.defaultPaymentAddress.lastname : exportedLastname) : exportedLastname" />
+  </bean>
+  <bean id="emailSubscriptionBirthDateDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultPaymentAddress != null ? customer.defaultPaymentAddress.dateOfBirth : exportedBirthDate) : exportedBirthDate" />
+  </bean>
+  <bean id="emailSubscriptionGenderDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultPaymentAddress != null ? customer.defaultPaymentAddress.gender : exportedGender) : exportedGender" />
+  </bean>
+  <bean id="emailSubscriptionBillingAddressDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultPaymentAddress != null ? customer.defaultPaymentAddress.streetname : exportedBillingAddress) : exportedBillingAddress" />
+  </bean>
+  <bean id="emailSubscriptionBillingCityDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultPaymentAddress != null ? customer.defaultPaymentAddress.town : exportedBillingCity) : exportedBillingCity" />
+  </bean>
+  <bean id="emailSubscriptionBillingPostalcodeDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultPaymentAddress != null ? customer.defaultPaymentAddress.postalcode : exportedBillingPostalCode) : exportedBillingPostalCode" />
+  </bean>
+  <bean id="emailSubscriptionBillingDistrictDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultPaymentAddress != null ? customer.defaultPaymentAddress.district : exportedBillingDistrict) : exportedBillingDistrict" />
+  </bean>
+  <bean id="emailSubscriptionBillingRegionDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultPaymentAddress != null ? customer.defaultPaymentAddress.region : exportedBillingRegion) : exportedBillingRegion" />
+  </bean>
+  <bean id="emailSubscriptionBillingCountryDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultPaymentAddress != null ? customer.defaultPaymentAddress.country : exportedBillingCountry) : exportedBillingCountry" />
+  </bean>
+  <bean id="emailSubscriptionBillingPhoneDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultPaymentAddress != null ? customer.defaultPaymentAddress.phone1 : exportedBillingPhone) : exportedBillingPhone" />
+  </bean>
+  <bean id="emailSubscriptionBillingCellphoneDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultPaymentAddress != null ? customer.defaultPaymentAddress.cellphone : exportedBillingCellPhone) : exportedBillingCellPhone" />
+  </bean>
+  <bean id="emailSubscriptionBillingFaxDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultPaymentAddress != null ? customer.defaultPaymentAddress.cellphone : exportedBillingFax) : exportedBillingFax" />
+  </bean>
+  <bean id="emailSubscriptionBillingCompanyDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultPaymentAddress != null ? customer.defaultPaymentAddress.company : exportedBillingCompany) : exportedBillingCompany" />
+  </bean>
+  <bean id="emailSubscriptionShippingAddressDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultShipmentAddress != null ? customer.defaultShipmentAddress.streetname : exportedShippingAddress) : exportedShippingAddress" />
+  </bean>
+  <bean id="emailSubscriptionShippingCityDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultShipmentAddress != null ? customer.defaultShipmentAddress.town : exportedShippingCity) : exportedShippingCity" />
+  </bean>
+  <bean id="emailSubscriptionShippingPostalcodeDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultShipmentAddress != null ? customer.defaultShipmentAddress.postalcode : exportedShippingPostalCode) : exportedShippingPostalCode" />
+  </bean>
+  <bean id="emailSubscriptionShippingDistrictDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultShipmentAddress != null ? customer.defaultShipmentAddress.district : exportedShippingDistrict) : exportedShippingDistrict" />
+  </bean>
+  <bean id="emailSubscriptionShippingRegionDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultShipmentAddress != null ? customer.defaultShipmentAddress.region : exportedShippingRegion) : exportedShippingRegion" />
+  </bean>
+  <bean id="emailSubscriptionShippingCountryDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultShipmentAddress != null ? customer.defaultShipmentAddress.country : exportedShippingCountry) : exportedShippingCountry" />
+  </bean>
+  <bean id="emailSubscriptionShippingPhoneDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultShipmentAddress != null ? customer.defaultShipmentAddress.phone1 : exportedShippingPhone) : exportedShippingPhone" />
+  </bean>
+  <bean id="emailSubscriptionShippingCellphoneDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultShipmentAddress != null ? customer.defaultShipmentAddress.cellphone : exportedShippingCellPhone) : exportedShippingCellPhone" />
+  </bean>
+  <bean id="emailSubscriptionShippingFaxDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultShipmentAddress != null ? customer.defaultShipmentAddress.cellphone : exportedShippingFax) : exportedShippingFax" />
+  </bean>
+  <bean id="emailSubscriptionShippingCompanyDynamicAttributeHandler" class="com.contactlab.model.GenericDynamicAttributeHandler">
+    <constructor-arg value="customer != null ? (customer.defaultShipmentAddress != null ? customer.defaultShipmentAddress.company : exportedShippingCompany) : exportedBillingCompany" />
+  </bean>
+  
+	<!-- DYNAMIC ATTRIBUTES HANDLERs -->
+  <bean id="customField1DynamicAttributeHandler" class="com.contactlab.attributehandlers.CustomFieldDynamicAttributeHandler">
+    <property name="flexibleSearchService" ref="flexibleSearchService" />
+    <property name="query" value="" />
+    <property name="parameters">
+      <map />
+    </property>
+  </bean>
+  <bean id="customField2DynamicAttributeHandler" class="com.contactlab.attributehandlers.CustomFieldDynamicAttributeHandler">
+    <property name="flexibleSearchService" ref="flexibleSearchService" />
+    <property name="query" value="" />
+    <property name="parameters">
+      <map />
+    </property>
+  </bean>
+  <bean id="customField3DynamicAttributeHandler" class="com.contactlab.attributehandlers.CustomFieldDynamicAttributeHandler">
+    <property name="flexibleSearchService" ref="flexibleSearchService" />
+    <property name="query" value="" />
+    <property name="parameters">
+      <map />
+    </property>
+  </bean>
+  <bean id="customField4DynamicAttributeHandler" class="com.contactlab.attributehandlers.CustomFieldDynamicAttributeHandler">
+    <property name="flexibleSearchService" ref="flexibleSearchService" />
+    <property name="query" value="" />
+    <property name="parameters">
+      <map />
+    </property>
+  </bean>
+  <bean id="customField5DynamicAttributeHandler" class="com.contactlab.attributehandlers.CustomFieldDynamicAttributeHandler">
+    <property name="flexibleSearchService" ref="flexibleSearchService" />
+    <property name="query" value="" />
+    <property name="parameters">
+      <map />
+    </property>
+  </bean>
+  <bean id="customField6DynamicAttributeHandler" class="com.contactlab.attributehandlers.CustomFieldDynamicAttributeHandler">
+    <property name="flexibleSearchService" ref="flexibleSearchService" />
+    <property name="query" value="" />
+    <property name="parameters">
+      <map />
+    </property>
+  </bean>
+  <bean id="customField7DynamicAttributeHandler" class="com.contactlab.attributehandlers.CustomFieldDynamicAttributeHandler">
+    <property name="flexibleSearchService" ref="flexibleSearchService" />
+    <property name="query" value="" />
+    <property name="parameters">
+      <map />
+    </property>
+  </bean>
+  <bean id="customField8DynamicAttributeHandler" class="com.contactlab.attributehandlers.CustomFieldDynamicAttributeHandler">
+    <property name="flexibleSearchService" ref="flexibleSearchService" />
+    <property name="query" value="" />
+    <property name="parameters">
+      <map />
+    </property>
+  </bean>
+  <bean id="customField9DynamicAttributeHandler" class="com.contactlab.attributehandlers.CustomFieldDynamicAttributeHandler">
+    <property name="flexibleSearchService" ref="flexibleSearchService" />
+    <property name="query" value="" />
+    <property name="parameters">
+      <map />
+    </property>
+  </bean>
+  <bean id="customField10DynamicAttributeHandler" class="com.contactlab.attributehandlers.CustomFieldDynamicAttributeHandler">
+    <property name="flexibleSearchService" ref="flexibleSearchService" />
+    <property name="query" value="" />
+    <property name="parameters">
+      <map />
+    </property>
+  </bean>
+</beans>

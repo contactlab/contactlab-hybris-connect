@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<configuration xmlns="hybris.de/schemas/hmc/generic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="hybris.de/schemas/hmc/generic hmc.xsd">
+  <explorertree>
+    <group name="contactlabgroup" position="3">
+      <typeref type="EmailSubscription" />
+      <typeref type="Campaign" />
+      <typeref type="EmailPage" />
+      <typeref type="ContactLabAbandonedCartCronJob" />
+    </group>
+  </explorertree>
+  <type name="EmailSubscription" mode="append" icon="ext/contactlab/images/contactlab.png">
+    <organizer>
+      <search mode="append">
+        <condition attribute="optIn" mode="delete" />
+        <condition attribute="campaigns" />
+      </search>
+      <result>
+        <listview mode="append">
+          <itemlayout>
+            <attribute name="optIn" mode="delete" />
+            <attribute name="firstOptInTime" mode="delete" />
+          </itemlayout>
+        </listview>
+      </result>
+      <editor>
+        <essentials>
+          <listlayout>
+            <attribute name="optIn" mode="delete" />
+            <attribute name="firstOptInTime" mode="delete" />
+            <attribute name="toBeExported" mode="append" />
+          </listlayout>
+        </essentials>
+        <tab name="tab.exported" id="tab_exported">
+          <section name="section.campaign">
+            <listlayout>
+              <attribute name="campaigns" />
+            </listlayout>
+          </section>
+          <section name="section.lastorder">
+            <listlayout>
+              <attribute name="exportedLastOrderDate" editable="false" />
+              <attribute name="exportedLastOrderValue" editable="false" />
+              <attribute name="exportedLastOrderItemsCount" editable="false" />
+            </listlayout>
+          </section>
+          <section name="section.totalorder">
+            <listlayout>
+              <attribute name="exportedTotalOrderValue" editable="false" />
+              <attribute name="exportedTotalOrderItemsCount" editable="false" />
+              <attribute name="exportedTotalOrderCount" editable="false" />
+            </listlayout>
+          </section>
+          <section name="section.orderaverage">
+            <listlayout>
+              <attribute name="exportedAverageOrderValue" editable="false" />
+              <attribute name="exportedAverageNumberOfItemsPerOrder" editable="false" />
+            </listlayout>
+          </section>
+          <section name="section.customperiod">
+            <listlayout>
+              <attribute name="exportedCustomPeriod1OrderValue" editable="false" />
+              <attribute name="exportedCustomPeriod1OrderItemsCount" editable="false" />
+              <attribute name="exportedCustomPeriod1OrderCount" editable="false" />
+              <attribute name="exportedCustomPeriod2OrderValue" editable="false" />
+              <attribute name="exportedCustomPeriod2OrderItemsCount" editable="false" />
+              <attribute name="exportedCustomPeriod2OrderCount" editable="false" />
+            </listlayout>
+          </section>
+          <section name="section.customfield">
+            <listlayout>
+              <attribute name="exportedCustomField1" editable="false" />
+              <attribute name="exportedCustomField2" editable="false" />
+              <attribute name="exportedCustomField3" editable="false" />
+              <attribute name="exportedCustomField4" editable="false" />
+              <attribute name="exportedCustomField5" editable="false" />
+              <attribute name="exportedCustomField6" editable="false" />
+              <attribute name="exportedCustomField7" editable="false" />
+              <attribute name="exportedCustomField8" editable="false" />
+              <attribute name="exportedCustomField9" editable="false" />
+              <attribute name="exportedCustomField10" editable="false" />
+            </listlayout>
+          </section>
+        </tab>
+        <tab name="administration" mode="delete" />
+      </editor>
+    </organizer>
+  </type>
+  <type name="Campaign" mode="append" icon="ext/contactlab/images/contactlab.png">
+    <organizer>
+      <search mode="replace">
+        <condition attribute="campaignId" />
+        <condition attribute="campaignName" />
+        <condition attribute="campaignType" />
+      </search>
+      <result>
+        <listview mode="replace">
+          <itemlayout>
+            <attribute name="campaignId" />
+            <attribute name="campaignName" />
+            <attribute name="campaignType" />
+          </itemlayout>
+        </listview>
+      </result>
+      <editor>
+        <tab name="tab.properties">
+          <section name="section.campaign.essentialdata">
+            <listlayout>
+              <attribute name="campaignName" />
+              <attribute name="campaignType" />
+              <attribute name="campaignId" />
+              <attribute name="subscriptionField" />
+              <attribute name="webFormCode" />
+              <attribute name="defaultOptIn" />
+            </listlayout>
+          </section>
+        </tab>
+        <tab name="administration" mode="delete" />
+      </editor>
+    </organizer>
+  </type>
+  <type name="EmailPage" mode="append" icon="ext/contactlab/images/contactlab.png">
+    <organizer>
+      <search mode="replace">
+        <condition attribute="uid" />
+        <condition attribute="name" />
+        <condition attribute="masterTemplate" />
+        <condition attribute="emailMessageType" />
+        <condition attribute="campaign" />
+      </search>
+      <result>
+        <listview mode="append">
+          <itemlayout>
+            <attribute name="emailMessageType" />
+            <attribute name="campaign" />
+          </itemlayout>
+        </listview>
+      </result>
+      <editor>
+        <essentials>
+          <listlayout>
+            <attribute name="emailMessageType" />
+            <attribute name="campaign" mode="append" />
+          </listlayout>
+        </essentials>
+      </editor>
+    </organizer>
+  </type>
+  <type name="ContactLabAbandonedCartCronJob" mode="append" icon="ext/contactlab/images/contactlab.png">
+    <organizer mode="append">
+      <search mode="append" autoperform="true">
+        <condition attribute="stores" />
+      </search>
+      <editor mode="append">
+        <tab name="properties" position="1">
+          <section name="properties">
+            <listlayout>
+              <attribute name="stores" />
+              <attribute name="delay" />
+              <attribute name="notificationNumber" />
+              <attribute name="htmlTemplate" />
+              <attribute name="exportGuest" />
+            </listlayout>
+          </section>
+          <section name="emailProperties">
+            <listlayout>
+              <attribute name="emailGroup" />
+              <attribute name="emailSubject" />
+              <attribute name="emailFromName" />
+              <attribute name="emailFromAddress" />
+              <attribute name="emailReplyTo" />
+              <attribute name="emailTemplateId" />
+            </listlayout>
+          </section>          
+        </tab>
+      </editor>
+    </organizer>
+  </type>
+  <type name="EmailSubscription" mode="append" icon="ext/contactlab/images/contactlab.png">
+    <organizer>
+      <search mode="replace">
+        <condition attribute="customer" />
+        <condition attribute="exportedEmail" />
+        <condition attribute="currentSubscribedEmail" />
+        <condition attribute="externalUserId" />
+        <condition attribute="optIn" />
+        <condition attribute="lastExportTime" />
+      </search>
+      <result>
+        <listview mode="replace">
+          <itemlayout>
+            <attribute name="customer" />
+            <attribute name="exportedEmail" />
+            <attribute name="currentSubscribedEmail" />
+            <attribute name="externalUserId" />
+            <attribute name="optIn" />
+            <attribute name="firstOptInTime" />
+            <attribute name="lastExportTime" />
+          </itemlayout>
+        </listview>
+      </result>
+      <editor>
+        <essentials>
+          <listlayout>
+            <attribute name="customer" />
+            <attribute name="exportedEmail" />
+            <attribute name="currentSubscribedEmail" />
+            <attribute name="externalUserId" />
+            <attribute name="exportedTitle" />
+            <attribute name="exportedFirstname" />
+            <attribute name="exportedMiddleName" />
+            <attribute name="exportedLastname" />
+            <attribute name="exportedBirthDate" />
+            <attribute name="exportedGender" />
+            <attribute name="optIn" />
+            <attribute name="firstOptInTime" />
+            <attribute name="lastExportTime" editable="false" />
+          </listlayout>
+        </essentials>
+        <tab name="tab.exported" id="tab_exported" position="0">
+          <section name="section.billingaddress">
+            <listlayout>
+              <attribute name="exportedBillingAddress" />
+              <attribute name="exportedBillingCity" />
+              <attribute name="exportedBillingPostalCode" />
+              <attribute name="exportedBillingDistrict" />
+              <attribute name="exportedBillingRegion" />
+              <attribute name="exportedBillingCountry" />
+              <attribute name="exportedBillingPhone" />
+              <attribute name="exportedBillingCellPhone" />
+              <attribute name="exportedBillingFax" />
+              <attribute name="exportedBillingCompany" />
+            </listlayout>
+          </section>
+          <section name="section.shippingaddress">
+            <listlayout>
+              <attribute name="exportedShippingAddress" />
+              <attribute name="exportedShippingCity" />
+              <attribute name="exportedShippingPostalCode" />
+              <attribute name="exportedShippingDistrict" />
+              <attribute name="exportedShippingRegion" />
+              <attribute name="exportedShippingCountry" />
+              <attribute name="exportedShippingPhone" />
+              <attribute name="exportedShippingCellPhone" />
+              <attribute name="exportedShippingFax" />
+              <attribute name="exportedShippingCompany" />
+            </listlayout>
+          </section>
+        </tab>
+        <tab name="exported" id="tab_administration" mode="delete" />
+      </editor>
+    </organizer>
+  </type>
+  
+  
+  
+  <type name="Cart" mode="append">
+    <organizer mode="append">
+      <editor mode="append">
+        <tab name="contactlab" position="5">
+          <section name="properties">
+            <listlayout>
+              <attribute name="contactlabAbandonedCartCounter" />
+              <attribute name="contactlabAbandonedCartDate" /> 
+            </listlayout>
+          </section>    
+        </tab>
+      </editor>
+    </organizer>
+  </type>
+
+</configuration>

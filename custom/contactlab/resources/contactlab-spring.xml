@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- IMPORTs -->
+  <import resource="contactlab-spring-emailmarketing.xml" />
+  <import resource="contactlab-spring-services.xml" />
+  <import resource="contactlab-spring-handlers.xml" />
+  <import resource="contactlab-spring-interceptors.xml" />
+  <import resource="contactlab-spring-integration.xml" />
+  <import resource="contactlab-spring-abandonedcarts.xml" />
+  
+	<!-- Utilities -->
+  <bean id="contactlabMailUtils" class="com.contactlab.utils.ContactlabMailUtils">
+    <property name="configurationService" ref="configurationService" />
+  </bean>
+  <bean id="emailSubscriptionExternalIdGenerator" class="de.hybris.platform.servicelayer.keygenerator.impl.PersistentKeyGenerator">
+    <property name="key" value="EmailSubscriptionExternalId" />
+    <property name="digits" value="10" />
+    <property name="start" value="0000000000" />
+    <property name="numeric" value="true" />
+  </bean>
+
+	<!-- DAOs -->
+  <alias name="defaultCampaignDao" alias="campaignDao" />
+  <bean id="defaultCampaignDao" class="com.contactlab.daos.DefaultCampaignDao">
+    <property name="flexibleSearchService" ref="flexibleSearchService" />
+  </bean>
+  <alias name="defaultOrderStatisticsDao" alias="orderStatisticsDao" />
+  <bean id="defaultOrderStatisticsDao" class="com.contactlab.daos.DefaultOrderStatisticsDao">
+    <property name="flexibleSearchService" ref="flexibleSearchService" />
+  </bean>
+
+	<!-- CONVERTERs -->
+  <alias name="defaultContactlabEmailSubscriptionConverter" alias="contactlabEmailSubscriptionConverter" />
+  <bean id="defaultContactlabEmailSubscriptionConverter" class="com.contactlab.converters.ContactlabEmailSubscriptionConverter">
+    <property name="dateFormat" value="dd.MM.yyyy" />
+  </bean>
+  <bean id="convertEmailSubscriptionsToXML" class="com.contactlab.converters.ConvertEmailSubscriptionsToXML">
+    <property name="campaignService" ref="campaignService" />
+    <property name="orderStatisticsService" ref="orderStatisticsService" />
+    <property name="configurationService" ref="configurationService" />
+    <property name="dateFormatPattern" value="yyyy-MM-dd" />
+  </bean>
+  <bean id="campaignConverter" class="com.contactlab.converters.CampaignConverter" />
+
+	<!-- LISTENERs -->
+  <bean id="contactlabPlaceOrderEventListener" class="com.contactlab.listeners.ContactlabPlaceOrderEventListener">
+    <property name="modelService" ref="modelService" />
+    <property name="tenantService" ref="tenantService" />
+    <property name="clusterService" ref="clusterService" />
+  </bean>
+
+	<!-- FACADEs -->
+  <alias name="defaultContactlabEmailSubscriptionFacade" alias="emailSubscriptionFacade" />
+  <bean id="defaultContactlabEmailSubscriptionFacade" class="com.contactlab.facades.DefaultContactlabEmailSubscriptionFacade" parent="defaultEmailSubscriptionFacade">
+    <property name="campaignConverter" ref="campaignConverter" />
+    <property name="campaignService" ref="campaignService" />
+    <property name="contactlabEmailSubscriptionService" ref="contactlabEmailSubscriptionService" />
+  </bean>
+</beans>

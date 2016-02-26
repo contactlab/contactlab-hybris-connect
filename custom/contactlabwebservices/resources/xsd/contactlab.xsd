@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema id="contactlab" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- CUSTOM PRIMITIVE TYPES -->
+    <xs:simpleType name="int_ge_1">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="int_ge_0">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"></xs:minInclusive>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="string_not_empty">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="string_fixed_40">
+        <xs:restriction base="xs:string">
+            <xs:length value="40" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- AUTH section -->
+    <xs:element name="auth">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="uid" type="int_ge_1" />
+                <xs:element name="suid" type="string_fixed_40" />
+                <xs:element minOccurs="0" name="gid" type="string_fixed_40" />
+                <xs:element name="key" type="string_fixed_40" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- COMMONS ELEMENTS -->
+
+    <!-- RECIPIENTS section -->
+
+    <xs:complexType name="test_type_rendering">
+        <xs:simpleContent>
+            <xs:extension base="int_ge_1">
+                <xs:attribute name="rendering" type="xs:boolean" use="optional" default="false" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="recipient_type">
+        <xs:sequence>
+            <xs:any processContents="skip" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="recipients">
+        <xs:complexType>
+            <xs:sequence>
+
+                <xs:element minOccurs="0" maxOccurs="1" name="retry" />
+
+                <xs:element name="db" minOccurs="0" maxOccurs="1" type="int_ge_1" />
+
+                <xs:element name="new_recipients" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:choice>
+                            <xs:element name="csv_file" type="string_not_empty" />
+                            <xs:element name="recipient" type="recipient_type" minOccurs="1" maxOccurs="unbounded" />
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="test_recipients" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:choice>
+                            <xs:element name="test_csv_file" type="string_not_empty" />
+                            <xs:element name="test_recipient" type="recipient_type" minOccurs="1" maxOccurs="30" />
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element minOccurs="0" maxOccurs="1" name="filter">
+
+                    <xs:annotation>
+                        <xs:documentation>Normal filter is considered only in case you
+                            don't add new recipients to the userdb
+                        </xs:documentation>
+                    </xs:annotation>
+
+
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="test" minOccurs="0" maxOccurs="1" type="test_type_rendering" />
+
+                            <xs:element name="normal" minOccurs="0" maxOccurs="1" type="int_ge_0">
+                                <xs:annotation>
+                                    <xs:documentation>Use 0 if you want to use the base qualifier
+                                        of the userdb associated to the newsletter
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="delivery-type">
+        <xs:annotation>
+            <xs:documentation>Schedule format is 'yyyy-mm-ddThh:mm:ss'
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="schedule" type="xs:dateTime" />
+            <xs:element name="remove_duplicates" minOccurs="0" maxOccurs="1" />
+            <xs:element name="transactional" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+        <xs:attribute name="method">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="manual" />
+                    <xs:enumeration value="auto" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="notes-type">
+        <xs:sequence>
+            <xs:element name="note" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence minOccurs="1">
+                        <xs:element name="label" type="string_not_empty" />
+                        <xs:element name="value" type="string_not_empty" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- <xs:complexType name="notification-type"> <xs:sequence> <xs:element name="email" minOccurs="1" maxOccurs="unbounded" type="xs:string" /> </xs:sequence> </xs:complexType> -->
+
+    <xs:group name="campaign-commons-type">
+        <xs:sequence>
+            <xs:element name="newsletter" minOccurs="1" maxOccurs="1" type="int_ge_1" />
+            <xs:element ref="recipients" minOccurs="1" maxOccurs="1" />
+            <xs:element name="delivery" minOccurs="1" maxOccurs="1" type="delivery-type" />
+            <xs:element name="notes" minOccurs="0" maxOccurs="1" type="notes-type" />
+            <!-- <xs:element name="notification" minOccurs="0" maxOccurs="1" type="notification-type" /> -->
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="campaign-commons-group">
+        <xs:group ref="campaign-commons-type" />
+    </xs:complexType>
+
+    <!-- EMAIL SECTION -->
+
+    <xs:complexType name="email-headers">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="subject" type="string_not_empty" />
+            <xs:element minOccurs="0" name="mail_from">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="name" type="string_not_empty" />
+                        <xs:element name="address" type="string_not_empty" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="reply_to" type="string_not_empty" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:group name="body-email-type">
+        <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="content">
+                <xs:complexType>
+                    <xs:choice minOccurs="1" maxOccurs="1">
+                        <xs:element name="embed" type="string_not_empty" />
+                        <xs:element name="uri" type="string_not_empty" />
+                    </xs:choice>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="preferences" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence minOccurs="1" maxOccurs="1">
+                        <xs:element name="stats">
+                            <xs:complexType>
+                                <xs:sequence>
+
+                                    <xs:element name="links" minOccurs="1" maxOccurs="1">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:annotation>
+                                                    <xs:documentation>
+                                                        'parse' is the command used to track
+                                                        links
+                                                    </xs:documentation>
+                                                </xs:annotation>
+                                                <xs:enumeration value="parse" />
+                                                <xs:enumeration value="off" />
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+
+                                    <xs:element minOccurs="0" maxOccurs="1" name="prettyprint">
+                                        <xs:complexType>
+                                            <xs:attribute default="true" type="xs:boolean" name="enabled" />
+                                        </xs:complexType>
+                                    </xs:element>
+
+                                    <xs:element minOccurs="0" maxOccurs="1" name="unescape">
+                                        <xs:complexType>
+                                            <xs:attribute default="true" type="xs:boolean" name="enabled" />
+                                            <xs:attribute default="false" type="xs:boolean" name="erb" />
+                                        </xs:complexType>
+                                    </xs:element>
+
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:group>
+
+
+    <xs:element name="option" type="AttrElement" />
+
+    <xs:complexType name="AttrElement">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="value" type="xs:string">
+                </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+
+    <xs:complexType name="body-email-group">
+        <xs:group ref="body-email-type"></xs:group>
+    </xs:complexType>
+
+    <xs:group name="message-email-type">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="encoding">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <!-- <xs:enumeration value="cp1252" /> -->
+                        <xs:enumeration value="iso-8859-15" />
+                        <!-- <xs:enumeration value="iso-8859-1" /> -->
+                        <xs:enumeration value="shift_jis" />
+                        <xs:enumeration value="utf-8" />
+                        <!-- <xs:enumeration value="utf-16" /> -->
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="headers" type="email-headers" />
+            <xs:element minOccurs="0" name="publish_on_web">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" type="string_not_empty" name="taffilename" />
+                        <xs:element minOccurs="0" maxOccurs="1" type="string_not_empty" name="taftemplate" />
+                    </xs:sequence>
+                    <xs:attribute use="optional" default="false" type="xs:boolean" name="ovveridetaf" />
+                </xs:complexType>
+            </xs:element>
+
+            <xs:choice>
+                <xs:sequence>
+                    <xs:element minOccurs="1" name="preferred_content">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="both" />
+                                <xs:enumeration value="simple_text" />
+                                <xs:enumeration value="rich_text" />
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element ref="body" />
+                </xs:sequence>
+                <xs:element ref="template_from_campaign_id" />
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:element name="body">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="1" name="html" type="body-email-group" />
+                <xs:element minOccurs="0" maxOccurs="1" name="text" type="body-email-group" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="template_from_campaign_id" type="int_ge_1" />
+
+    <xs:complexType name="message-email-group">
+        <xs:group ref="message-email-type"></xs:group>
+    </xs:complexType>
+
+
+
+    <xs:element name="email">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:group minOccurs="1" maxOccurs="1" ref="campaign-commons-type" />
+                <xs:element minOccurs="1" maxOccurs="1" name="message" type="message-email-group" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- SMS SECTION -->
+
+    <xs:group name="message-sms-type">
+        <xs:sequence>
+            <xs:element name="subject" type="string_not_empty" minOccurs="0" maxOccurs="1" />
+            <xs:element name="body" type="string_not_empty" minOccurs="0" maxOccurs="1" />
+            <xs:element name="from" type="string_not_empty" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="message-sms-group">
+        <xs:group ref="message-sms-type"></xs:group>
+    </xs:complexType>
+
+
+    <xs:element name="sms">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:group ref="campaign-commons-type" />
+                <xs:element name="message" type="message-sms-group" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- FAX SECTION -->
+    <xs:complexType name="attachment-list">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="filename" type="string_not_empty" />
+            <xs:element minOccurs="1" name="content-type">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="application/pdf" />
+                        <xs:enumeration value="image/tiff" />
+                        <xs:enumeration value="application/msword" />
+                        <xs:enumeration value="application/vnd.ms-excel" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="contents" type="string_not_empty" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="attachment-type">
+        <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="unbounded" name="attachment" type="attachment-list" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:group name="message-fax-type">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="subject" type="string_not_empty" />
+            <xs:element minOccurs="1" name="attachments" type="attachment-type" />
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="message-fax-group">
+        <xs:group ref="message-fax-type"></xs:group>
+    </xs:complexType>
+
+
+    <xs:element name="fax">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:group ref="campaign-commons-type" />
+                <xs:element name="message" type="message-fax-group" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- PUSH SECTION -->
+
+    <xs:group name="message-push-type">
+        <xs:sequence>
+            <xs:element name="subject" type="string_not_empty" minOccurs="1" maxOccurs="1" />
+            <xs:element name="push_template_envelope" type="string_not_empty" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="message-push-group">
+        <xs:group ref="message-push-type"></xs:group>
+    </xs:complexType>
+
+    <xs:element name="push">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:group ref="campaign-commons-type" />
+                <xs:element name="message" type="message-push-group" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- CAMPAIGN SECTION -->
+    <xs:element name="campaign">
+        <xs:complexType>
+            <xs:choice>
+                <xs:element ref="email" />
+                <xs:element ref="sms" />
+                <xs:element ref="fax" />
+                <xs:element ref="push" />
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- MAIN -->
+    <xs:element name="contactlab">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="auth" />
+                <xs:element ref="campaign" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

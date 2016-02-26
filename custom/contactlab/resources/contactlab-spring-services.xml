@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- SERVICEs --> 
+	<alias name="contactlabEmailSubscriptionExportService" alias="emailSubscriptionExportService"/>
+	<bean id="contactlabEmailSubscriptionExportService" class="com.contactlab.services.impl.ContactlabEmailSubscriptionExportService">
+		<property name="configurationService" ref="configurationService" />
+		<property name="modelService" ref="modelService" />
+		<property name="timeService" ref="timeService" />
+		<property name="convertEmailSubscriptionsToXML" ref="convertEmailSubscriptionsToXML" />
+		<property name="sftpChannel" ref="sftpChannel" />
+		<property name="fileNamePrefix" value="${contactlab.sftp.filename.prefix}" />
+		<property name="fileExtension" value="${contactlab.sftp.filename.extension}" />
+		<property name="fileExportDateFormat" value="yyyyMMdd" />
+		<property name="localFolder" value="${contactlab.sftp.localdirectory}/" />
+	</bean>
+	
+	<alias name="defaultContactlabEmailService" alias="emailService"/>	
+	<bean id="defaultContactlabEmailService" class="com.contactlab.services.impl.DefaultContactlabEmailService" parent="defaultEmailService" />	
+
+	<alias name="defaultContactlabEmailSubscriptionService" alias="contactlabEmailSubscriptionService"/>	
+	<bean id="defaultContactlabEmailSubscriptionService" class="com.contactlab.services.impl.DefaultContactlabEmailSubscriptionService" parent="defaultEmailSubscriptionService">
+		<property name="contactlabWebserviceDelegate" ref="contactlabWebserviceDelegate" />
+		<property name="campaignService" ref="campaignService" />
+		<property name="emailSubscriptionDao" ref="emailSubscriptionDao" />
+	</bean>
+
+	<alias name="defaultCampaignService" alias="campaignService"/>	
+	<bean id="defaultCampaignService" class="com.contactlab.services.impl.DefaultCampaignService">
+		<property name="campaignDao" ref="campaignDao" />
+	</bean>
+	
+	<alias name="defaultContactlabEmailGenerationService" alias="emailGenerationService"/>	
+	<bean id="defaultContactlabEmailGenerationService" class="com.contactlab.services.impl.DefaultContactlabEmailGenerationService" parent="defaultEmailGenerationService"/>
+	
+	<bean id="orderStatisticsService" class="com.contactlab.services.impl.DefaultOrderStatisticsService">
+		<property name="orderStatisticsDao" ref="orderStatisticsDao" />
+	</bean>
+</beans>
