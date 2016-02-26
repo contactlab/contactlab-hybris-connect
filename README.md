@@ -14,7 +14,8 @@ Installation / Usage
 --------------------
 
 Installation will require a working installation of the hybris commerce suite. Copy the connector code into the bin/custom directory and add the following lines to ${HYBRIS_HOME_DIR}\hybris\config\localextensions.xml
-```<extension name="contactlab" />
+```
+<extension name="contactlab" />
 <extension name="contactlabwebservices" />
 <extension name="contactlabaddon" />
 ```
@@ -25,11 +26,13 @@ Go to ${HYBRIS_HOME_DIR}\hybris\bin\platform and set up Apache Ant by entering t
 - For Unix operating systems: . ./setantenv.sh
 
 Execute the following command:
-```ant addoninstall -Daddonnames="contactlabaddon" -DaddonStorefront.yacceleratorstorefront="yacceleratorstorefront"
+```
+ant addoninstall -Daddonnames="contactlabaddon" -DaddonStorefront.yacceleratorstorefront="yacceleratorstorefront"
 ```
 
 Perform the build procedure by entering the command
-```ant clean all
+```
+ant clean all
 ```
 
 Start the platform by entering hybrisserver.sh (or hybrisserver.sh for Windows)
