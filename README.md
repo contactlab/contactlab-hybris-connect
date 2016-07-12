@@ -10,5 +10,5 @@ The plug-in supports a range of use cases, including:
   
 ## Documentation  
   
-To learn how to install, configure and use Contactsend Connect for Hybris, go to the Wiki pages [Insert Link]
+To learn how to install, configure and use Contactsend Connect for Hybris, go to the [Wiki pages](https://github.com/contactlab/contactlab-hybris-connect.wiki).
 
